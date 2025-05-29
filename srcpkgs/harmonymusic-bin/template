@@ -1,8 +1,8 @@
 # Template file for 'harmonymusic-bin'
 pkgname=harmonymusic-bin
-version=1.11.2
+version=1.12.0
 revision=1
-_debrev=24
+_debrev=25
 archs="x86_64"
 build_style=fetch
 short_desc="Cross platform app for streaming music"
@@ -11,7 +11,7 @@ license="GPL-3.0-or-later"
 homepage="https://github.com/anandnet/Harmony-Music"
 changelog="https://raw.githubusercontent.com/anandnet/Harmony-Music/refs/tags/v${version}/CHANGELOG.md"
 distfiles="${homepage}/releases/download/v${version}/harmonymusic-${version}+${_debrev}-linux.deb"
-checksum=39259c61d12ac7e6897b3896168a07c512227dbfdb2b0d78c861d995668856c1
+checksum=b84399da9de8ac14e36246a634d3fa59e5f3d854853a46d6b5cc4410c700883d
 repository=cereus-extra
 
 do_install() {

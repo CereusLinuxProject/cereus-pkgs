@@ -1,6 +1,6 @@
 # Template file for 'kde-rounded-corners'
 pkgname=kde-rounded-corners
-version=0.7.1
+version=0.7.2
 revision=1
 build_style=cmake
 hostmakedepends="qt6-tools-devel extra-cmake-modules gettext-devel"
@@ -11,6 +11,6 @@ license="GPL-3.0-or-later"
 homepage="https://github.com/matinlotfali/KDE-Rounded-Corners"
 changelog="${homepage}/releases/tag/v${version}"
 distfiles="${homepage}/archive/refs/tags/v${version}.tar.gz"
-checksum=a3c0fd621100ba1fda255d7c1feac7ce3623196fd0c1c574a3a1087f9edc9517
+checksum=0a58fa41a9bb5e4ac33ddbe50973138d7189cb3393aa718cd83792b047c2e4f0
 repository=cereus-extra
 make_check=no # tests aren't made to run inside chroot

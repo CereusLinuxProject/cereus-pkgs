@@ -1,6 +1,6 @@
 # Template file for 'handlr-regex'
 pkgname=handlr-regex
-version=0.12.1
+version=0.13.0
 revision=1
 build_style=cargo
 depends="shared-mime-info"
@@ -10,7 +10,7 @@ maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="MIT"
 homepage="https://github.com/Anomalocaridid/handlr-regex"
 distfiles="${homepage}/archive/v${version}.tar.gz"
-checksum=65e0d9651a8334fa23fcbf04de6a5f2ecc00bb3948f0bf0578b2170c37f30665
+checksum=963126a7aa8277b7cc7886c518528473ce5117a5999c949b809e14beffdbad0d
 conflicts="handlr"
 repository=cereus-extra
 

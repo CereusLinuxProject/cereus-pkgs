@@ -1,6 +1,6 @@
 # Template file for 'heroic-bin'
 pkgname=heroic-bin
-version=2.16.1
+version=2.17.0
 revision=1
 archs="x86_64"
 depends="fuse gawk zstd vulkan-loader"
@@ -10,7 +10,7 @@ license="GPL-3.0-only"
 homepage="https://heroicgameslauncher.com"
 changelog="https://github.com/releases/tag/v${version}"
 distfiles="https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/download/v${version}/Heroic-${version}-linux-amd64.deb"
-checksum=23335b5c6db37c6bb6e095fa118b7776e1b97f067e889de78bdcc6c7bd42a4c3
+checksum=e4524f5112861287b6d5d854c6cbd5d4a1bc4feb452afb968b79a9c6ccc96808
 repository=cereus-extra
 nopie=yes
 

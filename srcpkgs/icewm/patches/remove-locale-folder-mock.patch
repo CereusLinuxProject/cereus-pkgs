@@ -1,0 +1,21 @@
+diff --git a/po/CMakeLists.txt b/po/CMakeLists.txt
+index 2468defd..879de1eb 100644
+--- a/po/CMakeLists.txt
++++ b/po/CMakeLists.txt
+@@ -122,16 +122,6 @@ foreach(_lang ${LANGUAGES})
+     # Install user products
+     install(FILES ${_tempMO} DESTINATION "${LOCDIR}/${_lang}/LC_MESSAGES/" RENAME "${PACKAGE}.mo" OPTIONAL)
+ 
+-    # mimic the content of the installation folder, for development purposes
+-    set(PG "${CMAKE_CURRENT_BINARY_DIR}/playground")
+-    file(MAKE_DIRECTORY "${PG}")
+-    file(MAKE_DIRECTORY "${PG}/${_lang}/LC_MESSAGES/")
+-    if(CMAKE_VERSION VERSION_GREATER OR  VERSION_EQUAL "3.14")
+-        file(CREATE_LINK ${_tempMO} "${PG}/${_lang}/LC_MESSAGES/${PACKAGE}.mo" SYMBOLIC)
+-    else()
+-        install(FILES ${_tempMO} DESTINATION "${PG}/${_lang}/LC_MESSAGES/" RENAME "${PACKAGE}.mo" OPTIONAL)
+-    endif()
+-
+ endforeach()
+ 
+ if(PO_REPLACE_ONCE)

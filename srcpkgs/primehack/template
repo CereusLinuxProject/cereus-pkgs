@@ -1,8 +1,8 @@
 # Template file for 'primehack'
 pkgname=primehack
-version=2503
+version=2503.1
 revision=1
-_primehack_commit=997ae46cf620cfc31268cfb7a5499d62ff6dde1a
+_primehack_commit=fb402c8ebe14e6e07a01404392e14c4bf442dd99
 _cubeb_commit=54217bca3f3e0cd53c073690a23dd25d83557909
 _fmt_commit=e69e5f977d458f2650bb346dadf2ad30c5320281
 _googletest_commit=58d77fa8070e8cec2dc1ed015d66b454c8d78850
@@ -45,7 +45,7 @@ distfiles="https://github.com/xiota/dolphin-primehack/archive/${_primehack_commi
  https://github.com/syoyo/tinygltf/archive/${_tinygltf_commit}.tar.gz
  https://github.com/zlib-ng/minizip-ng/archive/${_minizip_ng_commit}.tar.gz
  https://github.com/zlib-ng/zlib-ng/archive/${_zlib_ng_commit}.tar.gz"
-checksum="fc4c7a2f98d8bf7f684545c018b7feabb51a4f0734da24e8506bcb30008f2d49
+checksum="6c00783ca06d3ace121ab73c655e80140daaeb100094c1c1aaf1fd065a466ea6
  5ed5125086a92666f1698df907a29f54f11197c382996094b556a1b22186ecaf
  ff848426a2eabfa0dfb5ee961440210f6cdec190883ed438ee7252ba595c9128
  bf8e6e9afa865c51ab796c8329df206297b329f008ef0c1308c642480fb2d289

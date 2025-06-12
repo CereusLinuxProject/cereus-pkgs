@@ -1,6 +1,6 @@
 # Template file for 'dolphin-emu'
 pkgname=dolphin-emu
-version=2503
+version=2506a
 revision=1
 _cubeb_commit=54217bca3f3e0cd53c073690a23dd25d83557909
 _fmt_commit=e69e5f977d458f2650bb346dadf2ad30c5320281
@@ -9,12 +9,13 @@ _implot_commit=18c72431f8265e2b0b5378a3a73d8a883b2175ff
 _libspng_commit=dc5b1032c08efac68ad30170f7ccbf0aa8dd55c9
 _mgba_commit=8739b22fbc90fdf0b4f6612ef9c0520f0ba44a51
 _minizip_ng_commit=55db144e03027b43263e5ebcb599bf0878ba58de
-_rcheevos_commit=d54cf8f1059cebc90a6f5ecdf03df69259f22054
+_rcheevos_commit=0115d9198ff7a73ff6568027dfb948ef6031818c
 _sanitizers_cmake_commit=aab6948fa863bc1cbe5d0850bc46b9ef02ed4c1a
 _spirv_cross_commit=ebe2aa0cd80f5eb5cd8a605da604cacf72205f3b
 _tinygltf_commit=c5641f2c22d117da7971504591a8f6a41ece488b
-_vma_commit=009ecd192c1289c7529bff248a16cfe896254816
+_vma_commit=3bab6924988e5f19bf36586a496156cf72f70d9f
 _zlib_ng_commit=ce01b1e41da298334f8214389cc9369540a7560f
+_sfml_commit=7f1162dfea4969bc17417563ac55d93b72e84c1e
 archs="x86_64* aarch64* ppc64le* i686"
 build_style=cmake
 configure_args="-DDISTRIBUTOR=Cereus -DENABLE_ANALYTICS=OFF
@@ -43,11 +44,12 @@ distfiles="https://github.com/dolphin-emu/dolphin/archive/${version}.tar.gz
  https://github.com/randy408/libspng/archive/${_libspng_commit}.tar.gz
  https://github.com/syoyo/tinygltf/archive/${_tinygltf_commit}.tar.gz
  https://github.com/zlib-ng/minizip-ng/archive/${_minizip_ng_commit}.tar.gz
- https://github.com/zlib-ng/zlib-ng/archive/${_zlib_ng_commit}.tar.gz"
-checksum="aad77fa841feb35e32467c9a0641596403c0e63ac6ad4006260e47d72a9c4ed2
- 5ed5125086a92666f1698df907a29f54f11197c382996094b556a1b22186ecaf
+ https://github.com/zlib-ng/zlib-ng/archive/${_zlib_ng_commit}.tar.gz
+ https://github.com/SFML/SFML/archive/${_sfml_commit}.tar.gz"
+checksum="0531c69ad0261a62ac4c051471e3d597b720eb5c93b4a04d4b028db2d0b4a179
+ 618dc35e4f571a508575fc1fc914eb15ab513e4443986509aff08dfb8844ba24
  ff848426a2eabfa0dfb5ee961440210f6cdec190883ed438ee7252ba595c9128
- bf8e6e9afa865c51ab796c8329df206297b329f008ef0c1308c642480fb2d289
+ 81d5d35e8b03194c103ceaedab1f37c473062d0907b496c50481f862f80c654d
  9f5b073625375322236a94ce8d2d803cdedad321c91e63845f487b9ebfb2c433
  4787c77e6050f3bdc19f39eecf87d5b321bd3096321142b63f8169e1aa8f9b34
  1723f27eed50e751037f49dcdf73e33b17658f1178ea1c1f829a30bb02335745
@@ -57,7 +59,8 @@ checksum="aad77fa841feb35e32467c9a0641596403c0e63ac6ad4006260e47d72a9c4ed2
  2486cf203f8a201448ebd34949bc7f73038781a9099e205e55f1907fa91931bc
  6352803f1ed18d479ea93abf96ac75c0222a21403be22840bde1072ee5935dfa
  e0fa42896ad244261f100fd06fae7c64f6054ce02d143f4d0f55df5fced9f63d
- 64a6d355d2d5c9449fc047e5bb0ca32875fc385061dfaf1df3aa791577b7ff5e"
+ 64a6d355d2d5c9449fc047e5bb0ca32875fc385061dfaf1df3aa791577b7ff5e
+ 503d90b6576a3343f7344ee5eff8642d06a487db3a83b5f36e92359f4cc896a7"
 repository=cereus-extra
 skip_extraction="${_cubeb_commit}.tar.gz
  ${_fmt_commit}.tar.gz
@@ -71,7 +74,8 @@ skip_extraction="${_cubeb_commit}.tar.gz
  ${_spirv_cross_commit}.tar.gz
  ${_tinygltf_commit}.tar.gz
  ${_vma_commit}.tar.gz
- ${_zlib_ng_commit}.tar.gz"
+ ${_zlib_ng_commit}.tar.gz
+ ${_sfml_commit}.tar.gz"
 
 case "$XBPS_TARGET_MACHINE" in
 	i686*) CFLAGS=-msse2 ;;
@@ -96,6 +100,7 @@ post_extract() {
 	vsrcextract -C Externals/spirv_cross/SPIRV-Cross ${_spirv_cross_commit}.tar.gz
 	vsrcextract -C Externals/tinygltf/tinygltf ${_tinygltf_commit}.tar.gz
 	vsrcextract -C Externals/zlib-ng/zlib-ng ${_zlib_ng_commit}.tar.gz
+	vsrcextract -C Externals/SFML/SFML ${_sfml_commit}.tar.gz
 	cp -r Externals/gtest/* Externals/cubeb/cubeb/googletest
 }
 

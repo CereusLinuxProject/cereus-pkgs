@@ -1,7 +1,7 @@
 # Template file for 'linux-legacy-cereus'
 pkgname=linux-legacy-cereus
-version=4.19
-revision=2
+version=5.4
+revision=1
 build_style=meta
 depends="linux${version} linux-base"
 short_desc="Cereus Linux legacy kernel meta-package"

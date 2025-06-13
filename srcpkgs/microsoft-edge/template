@@ -1,17 +1,17 @@
 # Template file for 'microsoft-edge'
 pkgname=microsoft-edge
 _pkgname="${pkgname}-stable"
-version=134.0.3124.95
+version=137.0.3296.83
 revision=1
 archs="x86_64"
 build_style="fetch"
 depends="xdg-utils"
 short_desc="Browser that combines a minimal design with sophisticated technology"
-maintainer="Luis F. Rosales Rangel <Lfssjquantum@murena.io>"
+maintainer="Luis F. Rosales Rangel <Lfssjquantum@murena.io>, Kevin Figueroa <kfdevart@disroot.org>"
 license="custom:Proprietary"
 homepage="https://microsoft.com/edge"
 distfiles="https://packages.microsoft.com/repos/edge/pool/main/m/${_pkgname}/${_pkgname}_${version}-1_amd64.deb"
-checksum=be04c997d06631d9b8030d450a921fab37e682c2ee63ad46fd14a403aea43e12
+checksum=c1b8a28efc73cb233d971a0cb5c40716a6580a196c1e1d213504f0760c4fa596
 repository=nonfree
 restricted=yes
 

@@ -1,8 +1,8 @@
 # Template file for 'reversal-icon-theme'
 pkgname=reversal-icon-theme
-version=2025.03.17
+version=2025.06.04
 revision=1
-_commit="02ebad5f69f4240eadf8c8c1b4f119ec09685651"
+_commit="d1ea985578ead2e44027a10a09a2be3b37dcd19e"
 build_style=meta
 depends="
  reversal-icon-theme-yellow
@@ -22,18 +22,18 @@ maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-3.0-only"
 homepage="https://github.com/yeyushengfan258/Reversal-icon-theme"
 distfiles="${homepage}/archive/${_commit}.tar.gz"
-checksum=2c237dbfce2cfa7b7d045a37781d9c2ef97a80ef19bb5fcac126d220c03f1be2
+checksum=402965cfb71915f5e3f6e6959ac7acde3f752cb670e85e054fa06275a9f0fa8d
 _icondir="usr/share/icons"
 repository=cereus-extra
 
+post_patch() {
+	# There is already a xbps trigger for this
+	sed -i 's/gtk-update-icon-cache.*//g' install.sh
+}
+
 do_install() {
 	vmkdir "${_icondir}"
-	# -a flag does not include the default (yellow) variant
-	vsed -i 's|THEME_NAME=.*|THEME_NAME=Reversal-yellow|g' install.sh
-	./install.sh -d "${DESTDIR}/${_icondir}"
-	# Install the rest of variants
-	vsed -i 's|THEME_NAME=.*|THEME_NAME=Reversal|g' install.sh
-	./install.sh -a -d "${DESTDIR}/${_icondir}"
+	./install.sh -t all -d "${DESTDIR}/${_icondir}"
 }
 
 reversal-icon-theme-yellow_package() {
@@ -42,8 +42,9 @@ reversal-icon-theme-yellow_package() {
 	nostrip=yes
 	pkg_install() {
 		for bright in "" -dark; do
-			vmove usr/share/icons/Reversal-yellow${bright}
-			vsed -i 's|Name=.*|Name=Reversal-yellow'"${bright}"'|g' "${PKGDESTDIR}/${_icondir}/Reversal-yellow${bright}/index.theme"
+			vmove usr/share/icons/Reversal${bright}
+			vsed -i 's|Name=.*|Name=Reversal-yellow'"${bright}"'|g' "${PKGDESTDIR}/${_icondir}/Reversal${bright}/index.theme"
+			rename Reversal Reversal-yellow "${PKGDESTDIR}/${_icondir}/Reversal${bright}"
 		done
 	}
 }

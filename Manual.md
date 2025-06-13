@@ -691,6 +691,9 @@ redistribution.
 to override the guessed list. Only use this if a specific order of subpackages is required,
 otherwise the default would work in most cases.
 
+- `metapackage` If set to `yes`, the package must be an empty meta-package, i.e. a package that
+only depends on other packages.
+
 - `broken` If set, building the package won't be allowed because its state is currently broken.
 This should be set to a string describing why it is broken, or a link to a buildlog demonstrating the failure.
 
@@ -881,7 +884,7 @@ package shouldn't be added as a build time dependency.
 The global repository takes the name of
 the current branch, except if the name of the branch is master. Then the resulting
 repository will be at the global scope. The usage scenario is that the user can
-update multiple packages in a second branch without polluting his local repository.
+update multiple packages in a second branch without polluting their local repository.
 
 <a id="pkg_defined_repo"></a>
 #### Package defined Repositories
@@ -1011,11 +1014,6 @@ information can be found in the `go.mod` file for modern Go projects.
 It's expected that the distfile contains the package, but dependencies
 will be downloaded with `go get`.
 
-- `meta` For `meta-packages`, i.e packages that only install local files or simply
-depend on additional packages. This build style does not install
-dependencies to the root directory, and only checks if a binary package is
-available in repositories.
-
 - `R-cran` For packages that are available on The Comprehensive R Archive
 Network (CRAN). The build style requires the `pkgname` to start with
 `R-cran-` and any dashes (`-`) in the CRAN-given version to be replaced
@@ -1136,8 +1134,9 @@ This aims to fix cross-builds for when the build-style is mixed: e.g. when in a
 - `qmake6` is like `qmake` but for Qt6.
 
 - `rust` specifies environment variables required for cross-compiling crates via cargo and
-for compiling cargo -sys crates. This helper is added by default for packages that use the
-`cargo` build style.
+for compiling cargo -sys crates.
+It also adds a `cargo` wrapper that detects and passes builds through `cargo-auditable`.
+This helper is added by default for packages that use the `cargo` build style.
 
 <a id="functions"></a>
 ### Functions
@@ -1638,6 +1637,13 @@ applications (e.g., the application is written in C while the command is
 written in Python) or just single Python file ones that live in `/usr/bin`.
 If `python_version` is set to `ignore`, python-containing shebangs will not be rewritten.
 Use this only if a package should not be using a system version of python.
+
+- `python_extras`: Python module extras to consider when verifying Python module dependencies.
+Can be used to ensure additional dependency sets are checked. Example: `python_extras="all"`.
+
+- `nopyprovides`: if set, don't create `provides` entries for Python modules in the package.
+
+- `noverifypydeps`: if set, don't verify Python module dependencies.
 
 Also, a set of useful variables are defined to use in the templates:
 

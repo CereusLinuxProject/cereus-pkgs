@@ -52,9 +52,11 @@ show_pkg_var() {
             _sep="	"
         fi
         if [ -n "$_always_split" ] || [[ "$_value" =~ $'\n' ]]; then
+            set -f
             for i in ${_value}; do
                 [ -n "$i" ] && echo "${_label}:${_sep}${i}"
             done
+            set +f
         else
             echo "${_label}:${_sep}${_value}"
         fi
@@ -62,7 +64,7 @@ show_pkg_var() {
 }
 
 show_pkg_deps() {
-    [ -f "${PKGDESTDIR}/rdeps" ] && cat ${PKGDESTDIR}/rdeps
+    [ -f "${XBPS_STATEDIR}/${pkgname}-rdeps" ] && cat "${XBPS_STATEDIR}/${pkgname}-rdeps"
 }
 
 show_pkg_files() {
@@ -155,9 +157,9 @@ show_pkg_build_options() {
 }
 
 show_pkg_shlib_provides() {
-    [ -f "${PKGDESTDIR}/shlib-provides" ] && cat ${PKGDESTDIR}/shlib-provides
+    [ -f "${XBPS_STATEDIR}/${pkgname}-shlib-provides" ] && cat "${XBPS_STATEDIR}/${pkgname}-shlib-provides"
 }
 
 show_pkg_shlib_requires() {
-    [ -f "${PKGDESTDIR}/shlib-requires" ] && cat ${PKGDESTDIR}/shlib-requires
+    [ -f "${XBPS_STATEDIR}/${pkgname}-shlib-requires" ] && cat "${XBPS_STATEDIR}/${pkgname}-shlib-requires"
 }

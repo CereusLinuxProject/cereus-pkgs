@@ -1,7 +1,7 @@
 # Cycle detector for cereus-pkgs
 
 This script enumerates dependencies for packages in a
-[cereus-pkgs repository](https://github.com/void-linux/cereus-pkgs)
+[cereus-pkgs repository](https://codeberg.org/cereus-linux/cereus-pkgs)
 and identifies build-time dependency cycles.
 
 For command syntax, run `xbps-cycles.py -h`. Often, it may be sufficient to run

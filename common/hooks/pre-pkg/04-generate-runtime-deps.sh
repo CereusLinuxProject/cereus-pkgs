@@ -41,7 +41,7 @@ store_pkgdestdir_rundeps() {
                     _curdep="${_curdep}>=0"
                 fi
                 printf "%s " "${_curdep}"
-            done > "${PKGDESTDIR}/rdeps"
+            done > "${XBPS_STATEDIR}/${pkgname}-rdeps"
         fi
 }
 
@@ -117,7 +117,7 @@ hook() {
             _pkgname=${_pkgname%.nosoname}
             _sdep="${_pkgname}-${version}_${revision}"
         else
-            _rdep="$(awk -v sl="$f" '$1 == sl { print $2; exit; }' "$mapshlibs")"
+            _rdep="$(awk -v sl="$f" -v arch="$XBPS_TARGET_MACHINE" '$1 == sl && ($3 == "" || $3 == "ignore" || $3 == arch) { print $2; exit; }' "$mapshlibs")"
 
             if [ -z "$_rdep" ]; then
                 msg_red_nochroot "   SONAME: $f <-> UNKNOWN PKG PLEASE FIX!\n"
@@ -149,6 +149,6 @@ hook() {
     store_pkgdestdir_rundeps
 
     if [ -n "${sorequires}" ]; then
-        echo "${sorequires}" | xargs -n1 | sort | xargs > ${PKGDESTDIR}/shlib-requires
+        echo "${sorequires}" | xargs -n1 | sort | xargs > ${XBPS_STATEDIR}/${pkgname}-shlib-requires
     fi
 }

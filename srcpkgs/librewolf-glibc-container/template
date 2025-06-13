@@ -2,8 +2,8 @@
 # This package is deprecated in favor of index-0's librewolf build for musl
 pkgname=librewolf-glibc-container
 _pkgname=${pkgname%-glibc-container}
-_version=133.0-1
-version=133.0.1
+_version=139.0.4-1
+version=139.0.4
 revision=1
 archs="x86_64-musl"
 depends="voidnsrun-setup"

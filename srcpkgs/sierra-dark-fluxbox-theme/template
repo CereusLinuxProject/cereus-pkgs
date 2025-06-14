@@ -18,5 +18,5 @@ do_install() {
 	vcopy pixmaps ${_theme_dir}
 	vinstall theme.cfg 644 ${_theme_dir}
 	vdoc README.md
-	vcopy preview"*".png usr/share/${pkgname}
+	vcopy preview"*".png usr/share/doc/${pkgname}
 }

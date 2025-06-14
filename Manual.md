@@ -229,10 +229,9 @@ Programs put executables under /usr/bin (or in very special cases in other
 .../bin directories)
 
 For those packages the upstream packages name should be used. Remember that
-in contrast to many other distributions, void doesn't lowercase package names.
-As a rule of thumb, if the tar.gz of a package contains uppercase letter, then
-the package name should contain them too; if it doesn't, the package name
-is lowercase.
+in contrast to Void and in a similar way to other distributions, Cereus keeps
+the name of all packages lowercase (transitional packages are the exception
+but they are going to be removed eventually).
 
 Programs can be split into program packages and library packages. The program
 package should be named as described above. The library package should be

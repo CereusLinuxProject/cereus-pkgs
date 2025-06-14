@@ -23,6 +23,10 @@ post_extract() {
 	vsrcextract -C thirdparty/toml11 "${_toml11_commit}.tar.gz"
 }
 
+post_patch() {
+	vsed -i 's|G_APPLICATION_FLAGS_NONE|G_APPLICATION_DEFAULT_FLAGS|g' src/main.cc
+}
+
 post_install() {
 	vlicense LICENSE
 }

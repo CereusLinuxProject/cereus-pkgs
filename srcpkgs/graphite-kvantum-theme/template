@@ -2,7 +2,7 @@
 pkgname=graphite-kvantum-theme
 version=1.1.1
 revision=2
-build_style=meta
+metapackage=yes
 depends="
  graphite-kvantum-theme-black
  graphite-kvantum-theme-dark
@@ -66,42 +66,44 @@ graphite-kvantum-theme-nord-light_package() {
 		for color in ${_colors}; do
 			vmove ${_kvantumdir}/Graphite-${color}-Nord-light
 		done
+		# TO-DO: normalize path names
+		vmove ${_kvantumdir}/Graphite-teal-nord-light
 	}
 }
 
 # Transitional dummy packages. These will be removed in a future update.
 Graphite-kvantum-theme_package() {
 	short_desc+=" - (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-${version}_${revision}"
 }
 
 Graphite-kvantum-theme-black_package() {
 	short_desc+=" - black variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-black-${version}_${revision}"
 }
 
 Graphite-kvantum-theme-dark_package() {
 	short_desc+=" - dark variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-dark-${version}_${revision}"
 }
 
 Graphite-kvantum-theme-light_package() {
 	short_desc+=" - light variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-light-${version}_${revision}"
 }
 
 Graphite-kvantum-theme-Nord-dark_package() {
 	short_desc+=" - nord dark variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-nord-dark-${version}_${revision}"
 }
 
 Graphite-kvantum-theme-Nord-light_package() {
 	short_desc+=" - nord light variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-nord-light-${version}_${revision}"
 }

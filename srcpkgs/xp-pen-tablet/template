@@ -1,36 +1,27 @@
 # Template file for 'xp-pen-tablet'
 pkgname=xp-pen-tablet
-_version=3.4.9-240607
-version=${_version//-/.}
+version=4.0.7.250117
 revision=1
 archs="x86_64"
-repository=nonfree
-nostrip=yes
 short_desc="XP-Pen Official Linux utility"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 conf_files="/usr/lib/pentablet/conf/xppen/config.xml"
 license="custom:Proprietary"
 homepage="https://www.xp-pen.com/download/index.html"
-distfiles="https://www.xp-pen.com/download/file.html?id=2901&pid=819&ext=gz>XPPenLinux${version}.tar.gz"
-checksum=df707c2633a3b2fd7bb8569edf38462b0e34a1e0fa7c7275602f7011540eefe4
+distfiles="https://www.xp-pen.com/download/file.html?id=3665&pid=1211&ext=deb>XPPenLinux${version}.deb"
+checksum=3d6434f23f9c9dcad0c35bab3cf123175163a2b82556c5b552387ae671669283
+repository=nonfree
+nopie=yes
 
 do_install() {
-    cp -r App/* ${DESTDIR}/
-    cp -r ${DESTDIR}/lib/* ${DESTDIR}/usr/lib/
-    rm -rf ${DESTDIR}/lib
+	vsrcextract -C "${DESTDIR}" XPPenLinux${version}.deb
+	mv "${DESTDIR}/lib/udev" "${DESTDIR}/usr/"
 
-    # Fix permissions
-    chmod +0444 ${DESTDIR}/etc/xdg/autostart/xppentablet.desktop
-    chmod +0444 ${DESTDIR}/usr/share/applications/xppentablet.desktop
-    chmod +0555 ${DESTDIR}/usr/share/icons/hicolor/256x256/apps/xppentablet.png
-    chmod +0555 ${DESTDIR}/usr/lib/pentablet/PenTablet
-    chmod +0755 ${DESTDIR}/usr/lib/pentablet/PenTablet.sh
+	# Use an alternative launch script for PATH
+	vbin ${FILESDIR}/pentablet
 
-    # Use an alternative launch script for PATH
-    vbin ${FILESDIR}/pentablet
-
-    # Install license.
-    for license in EULA ThirdPartyLibraries.html; do
-        vlicense ${DESTDIR}/usr/lib/pentablet/doc/$license
-    done
+	# Install license.
+	for license in EULA ThirdPartyLibraries.html; do
+		vlicense ${DESTDIR}/usr/lib/pentablet/doc/$license
+	done
 }

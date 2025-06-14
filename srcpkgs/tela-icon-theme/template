@@ -2,7 +2,7 @@
 pkgname=tela-icon-theme
 version=2025.02.10
 revision=1
-build_style=meta
+metapackage=yes
 _date="${version//./-}"
 _icondir=usr/share/icons
 depends="
@@ -167,90 +167,90 @@ tela-icon-theme-nord_package() {
 
 Tela-icon-theme-standard_package() {
 	short_desc+=" - standard variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-standard>=${version}_${revision}"
 }
 
 Tela-icon-theme-black_package() {
 	short_desc+=" - black variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-black>=${version}_${revision}"
 }
 
 Tela-icon-theme-blue_package() {
 	short_desc+=" - blue variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-blue>=${version}_${revision}"
 }
 
 Tela-icon-theme-brown_package() {
 	short_desc+=" - brown variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-brown>=${version}_${revision}"
 }
 
 Tela-icon-theme-green_package() {
 	short_desc+=" - green variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-green>=${version}_${revision}"
 }
 
 Tela-icon-theme-grey_package() {
 	short_desc+=" - grey variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-grey>=${version}_${revision}"
 }
 
 Tela-icon-theme-orange_package() {
 	short_desc+=" - orange variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-orange>=${version}_${revision}"
 }
 
 Tela-icon-theme-pink_package() {
 	short_desc+=" - pink variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-pink>=${version}_${revision}"
 }
 
 Tela-icon-theme-purple_package() {
 	short_desc+=" - purple variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-purple>=${version}_${revision}"
 }
 
 Tela-icon-theme-red_package() {
 	short_desc+=" - red variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-red>=${version}_${revision}"
 }
 
 Tela-icon-theme-yellow_package() {
 	short_desc+=" - yellow variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-yellow>=${version}_${revision}"
 }
 
 Tela-icon-theme-manjaro_package() {
 	short_desc+=" - manjaro variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-manjaro>=${version}_${revision}"
 }
 
 Tela-icon-theme-ubuntu_package() {
 	short_desc+=" - ubuntu variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-ubuntu>=${version}_${revision}"
 }
 
 Tela-icon-theme-dracula_package() {
 	short_desc+=" - dracula variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-dracula>=${version}_${revision}"
 }
 
 Tela-icon-theme-nord_package() {
 	short_desc+=" - nord variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-nord>=${version}_${revision}"
 }

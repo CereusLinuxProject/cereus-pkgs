@@ -27,7 +27,7 @@ do_install() {
 }
 
 onlyoffice-desktopeditors_package() {
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}>=${version}_${revision}"
 	short_desc+=" - transitional dummy package"
 }

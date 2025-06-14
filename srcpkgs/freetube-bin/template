@@ -24,7 +24,7 @@ do_install() {
 }
 
 freetube_package() {
-	build_style=meta
+	metapackage=yes
 	depends="freetube-bin"
 	short_desc+=" - transitional dummy package"
 }

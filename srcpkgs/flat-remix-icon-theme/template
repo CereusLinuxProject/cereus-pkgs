@@ -1,8 +1,9 @@
 # Template file for 'flat-remix-icon-theme'
 pkgname=flat-remix-icon-theme
 version=2024.02.01
-revision=2
+revision=3
 build_style=gnu-makefile
+metapackage=yes
 depends="${pkgname}-black
  ${pkgname}-blue ${pkgname}-brown ${pkgname}-cyan ${pkgname}-green ${pkgname}-grey
  ${pkgname}-magenta ${pkgname}-orange ${pkgname}-red ${pkgname}-teal
@@ -14,11 +15,6 @@ homepage="https://github.com/daniruiz/flat-remix"
 distfiles="${homepage}/archive/refs/tags/${version//./}.tar.gz"
 checksum=f4ad5c51cfa72ccb6829b53f704529e96e44ef076fa58178132e56459a325702
 repository=cereus-extra
-
-post_install() {
-	# If PKGDESTDIR is empty, it will fail since the build_style is set to gnu-makefile and not meta.
-	vdoc CHANGELOG
-}
 
 flat-remix-icon-theme-black_package() {
 	short_desc+=" - black variant"

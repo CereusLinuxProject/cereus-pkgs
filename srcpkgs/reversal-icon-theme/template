@@ -3,7 +3,7 @@ pkgname=reversal-icon-theme
 version=2025.06.04
 revision=1
 _commit="d1ea985578ead2e44027a10a09a2be3b37dcd19e"
-build_style=meta
+metapackage=yes
 depends="
  reversal-icon-theme-yellow
  reversal-icon-theme-blue

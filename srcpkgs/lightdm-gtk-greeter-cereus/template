@@ -20,7 +20,7 @@ provides="lightdm-greeter-1_0"
 repository=cereus-core
 
 lightdm-gtk3-greeter-cereus_package() {
-	build_style=meta
+	metapackage=yes
 	depends="lightdm-gtk-greeter-cereus>=2"
 	short_desc+=" - transition"
 }

@@ -2,7 +2,7 @@
 pkgname=base-cereus
 version=2023.11.12
 revision=2
-build_style=meta
+metapackage=yes
 short_desc="Cereus Linux base system meta package"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="Public Domain"

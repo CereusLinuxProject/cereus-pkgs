@@ -2,7 +2,7 @@
 pkgname=base-cereustrap
 version=0.11
 revision=4
-build_style=meta
+metapackage=yes
 short_desc="Cereus Linux base system meta package for containers/chroots"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="Public Domain"

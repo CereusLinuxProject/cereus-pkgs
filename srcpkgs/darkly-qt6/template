@@ -29,13 +29,13 @@ darkly-qt6-devel_package() {
 
 # Transitional dummy packages. These are going to be removed in a future update.
 lightly-qt6_package() {
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}>=${version}_${revision}"
 	short_desc+=" - transitional dummy package"
 }
 
 lightly-qt6-devel_package() {
-	build_style=meta
+	metapackage=yes
 	depends="darkly-qt6-devel>=${version}_${revision}"
 	short_desc+=" - transitional dummy package"
 }

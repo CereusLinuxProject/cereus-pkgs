@@ -3,7 +3,7 @@ pkgname=vibrancy-icon-theme
 version=2.7
 revision=2
 _commit="1d53ae16e24faec4e529dec255f2880e37e5503b"
-build_style=meta
+metapackage=yes
 depends="
  ${pkgname}-nonmono-light ${pkgname}-nonmono-dark ${pkgname}-colors
  ${pkgname}-dark ${pkgname}-full-dark ${pkgname}-light"

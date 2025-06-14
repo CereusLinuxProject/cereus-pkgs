@@ -2,7 +2,7 @@
 pkgname=lxqt-minimal
 version=2.2.0
 revision=1
-build_style=meta
+metapackage=yes
 depends="
 	lxqt-about>=${version}
 	lxqt-admin>=${version}

@@ -34,7 +34,7 @@ post_install() {
 }
 
 librewolf-musl_package() {
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}>=${version}_${revision}"
 	short_desc+=" - transitional dummy package"
 }

@@ -3,7 +3,6 @@ pkgname=cereus-repo-extra
 version=0.2
 revision=2
 archs="x86_64 x86_64-musl i686"
-build_style=meta
 short_desc="Cereus Linux Extra repository"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="Public Domain"

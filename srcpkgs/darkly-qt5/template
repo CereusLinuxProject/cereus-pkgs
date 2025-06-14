@@ -26,13 +26,13 @@ post_install() {
 
 # Transitional dummy packages. These are going to be removed in a future update.
 lightly-qt5_package() {
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}>=${version}_${revision}"
 	short_desc+=" - transitional dummy package"
 }
 
 lightly-git_package() {
-	build_style=meta
+	metapackage=yes
 	reverts="2023.12.29_4"
 	depends="${sourcepkg}>=${version}_${revision}"
 	short_desc+=" - transitional dummy package"

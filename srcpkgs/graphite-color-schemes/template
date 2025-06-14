@@ -2,12 +2,6 @@
 pkgname=graphite-color-schemes
 version=2023.01.17
 revision=1
-build_style=meta
-depends="graphite-color-schemes-light
- graphite-color-schemes-dark
- graphite-color-schemes-black
- graphite-color-schemes-nord-light
- graphite-color-schemes-nord-dark"
 short_desc="Custom additional color schemes of Graphite theme for KDE Plasma desktop"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-3.0-or-later"
@@ -69,34 +63,40 @@ graphite-color-schemes-nord-dark_package() {
 	}
 }
 
+graphite-color-schemes-all_package() {
+	short_desc+=" - all variants"
+	depends="${sourcepkg}-light ${sourcepkg}-dark ${sourcepkg}-black
+		${sourcepkg}-nord-light ${sourcepkg}-nord-dark ${sourcepkg}"
+	metapackage=yes
+}
 
 # Transitional dummy packages. These will be removed in a future update.
 Graphite-color-schemes-light_package() {
 	short_desc+=" - light variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-light>=${version}_${revision}"
 }
 
 Graphite-color-schemes-black_package() {
 	short_desc+=" - black variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-black>=${version}_${revision}"
 }
 
 Graphite-color-schemes-dark_package() {
 	short_desc+=" - dark variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-dark>=${version}_${revision}"
 }
 
 Graphite-color-schemes-nord-light_package() {
 	short_desc+=" - nord light variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-nord-light>=${version}_${revision}"
 }
 
 Graphite-color-schemes-nord-dark_package() {
 	short_desc+=" - nord dark variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-nord-dark>=${version}_${revision}"
 }

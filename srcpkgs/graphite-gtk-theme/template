@@ -2,19 +2,7 @@
 pkgname=graphite-gtk-theme
 version=2024.07.15
 revision=2
-build_style=meta
 hostmakedepends="sassc"
-depends="
- graphite-gtk-theme-black
- graphite-gtk-theme-black-compact
- graphite-gtk-theme-dark
- graphite-gtk-theme-dark-compact
- graphite-gtk-theme-light
- graphite-gtk-theme-light-compact
- graphite-gtk-theme-nord-dark
- graphite-gtk-theme-nord-dark-compact
- graphite-gtk-theme-nord-light
- graphite-gtk-theme-nord-light-compact"
 short_desc="Material design inspired GTK theme with light and dark variants"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-3.0-or-later"
@@ -43,9 +31,10 @@ graphite-gtk-theme-black_package() {
 	depends="gtk-engine-murrine"
 	nostrip=yes
 	pkg_install() {
-		for color in ${_colors}; do
+		for color in "" -$(echo ${_colors} | sed 's| | -|g'); do
 			for res in "" -{,x}hdpi; do
-				vmove ${_themedir}/Graphite-black-${color}-Dark${res}
+				vmove ${_themedir}/Graphite-black${color}-Dark${res}
+
 			done
 		done
 	}
@@ -56,9 +45,9 @@ graphite-gtk-theme-black-compact_package() {
 	depends="gtk-engine-murrine"
 	nostrip=yes
 	pkg_install() {
-		for color in ${_colors}; do
+		for color in "" -$(echo ${_colors} | sed 's| | -|g'); do
 			for res in "" -{,x}hdpi; do
-				vmove ${_themedir}/Graphite-black-${color}-Dark-compact${res}
+				vmove ${_themedir}/Graphite-black${color}-Dark-compact${res}
 			done
 		done
 	}
@@ -69,9 +58,9 @@ graphite-gtk-theme-dark_package() {
 	depends="gtk-engine-murrine"
 	nostrip=yes
 	pkg_install() {
-		for color in ${_colors}; do
+		for color in "" -$(echo ${_colors} | sed 's| | -|g'); do
 			for res in "" -{,x}hdpi; do
-				vmove ${_themedir}/Graphite-${color}-Dark${res}
+				vmove ${_themedir}/Graphite${color}-Dark${res}
 			done
 		done
 	}
@@ -82,9 +71,9 @@ graphite-gtk-theme-dark-compact_package() {
 	depends="gtk-engine-murrine"
 	nostrip=yes
 	pkg_install() {
-		for color in ${_colors}; do
+		for color in "" -$(echo ${_colors} | sed 's| | -|g'); do
 			for res in "" -{,x}hdpi; do
-				vmove ${_themedir}/Graphite-${color}-Dark-compact${res}
+				vmove ${_themedir}/Graphite${color}-Dark-compact${res}
 			done
 		done
 	}
@@ -95,9 +84,9 @@ graphite-gtk-theme-light_package() {
 	depends="gtk-engine-murrine"
 	nostrip=yes
 	pkg_install() {
-		for color in ${_colors}; do
+		for color in "" -$(echo ${_colors} | sed 's| | -|g'); do
 			for res in "" -{,x}hdpi; do
-				vmove ${_themedir}/Graphite-${color}-Light${res}
+				vmove ${_themedir}/Graphite${color}-Light${res}
 			done
 		done
 	}
@@ -108,9 +97,35 @@ graphite-gtk-theme-light-compact_package() {
 	depends="gtk-engine-murrine"
 	nostrip=yes
 	pkg_install() {
-		for color in ${_colors}; do
+		for color in "" -$(echo ${_colors} | sed 's| | -|g'); do
 			for res in "" -{,x}hdpi; do
-				vmove ${_themedir}/Graphite-${color}-Light-compact${res}
+				vmove ${_themedir}/Graphite${color}-Light-compact${res}
+			done
+		done
+	}
+}
+
+graphite-gtk-theme-nord_package() {
+	short_desc+=" - nord variant"
+	depends="gtk-engine-murrine"
+	nostrip=yes
+	pkg_install() {
+		for color in "" -$(echo ${_colors} | sed 's| | -|g'); do
+			for res in "" -{,x}hdpi; do
+				vmove ${_themedir}/Graphite${color}-nord${res}
+			done
+		done
+	}
+}
+
+graphite-gtk-theme-nord-compact_package() {
+	short_desc+=" - nord compact variant"
+	depends="gtk-engine-murrine"
+	nostrip=yes
+	pkg_install() {
+		for color in "" -$(echo ${_colors} | sed 's| | -|g'); do
+			for res in "" -{,x}hdpi; do
+				vmove ${_themedir}/Graphite${color}-compact-nord${res}
 			done
 		done
 	}
@@ -121,9 +136,9 @@ graphite-gtk-theme-nord-dark_package() {
 	depends="gtk-engine-murrine"
 	nostrip=yes
 	pkg_install() {
-		for color in ${_colors}; do
+		for color in "" -$(echo ${_colors} | sed 's| | -|g'); do
 			for res in "" -{,x}hdpi; do
-				vmove ${_themedir}/Graphite-${color}-Dark-nord${res}
+				vmove ${_themedir}/Graphite${color}-Dark-nord${res}
 			done
 		done
 	}
@@ -134,9 +149,9 @@ graphite-gtk-theme-nord-dark-compact_package() {
 	depends="gtk-engine-murrine"
 	nostrip=yes
 	pkg_install() {
-		for color in ${_colors}; do
+		for color in "" -$(echo ${_colors} | sed 's| | -|g'); do
 			for res in "" -{,x}hdpi; do
-				vmove ${_themedir}/Graphite-${color}-Dark-compact-nord${res}
+				vmove ${_themedir}/Graphite${color}-Dark-compact-nord${res}
 			done
 		done
 	}
@@ -147,9 +162,9 @@ graphite-gtk-theme-nord-light_package() {
 	depends="gtk-engine-murrine"
 	nostrip=yes
 	pkg_install() {
-		for color in ${_colors}; do
+		for color in "" -$(echo ${_colors} | sed 's| | -|g'); do
 			for res in "" -{,x}hdpi; do
-				vmove ${_themedir}/Graphite-${color}-Light-nord${res}
+				vmove ${_themedir}/Graphite${color}-Light-nord${res}
 			done
 		done
 	}
@@ -160,9 +175,9 @@ graphite-gtk-theme-nord-light-compact_package() {
 	depends="gtk-engine-murrine"
 	nostrip=yes
 	pkg_install() {
-		for color in ${_colors}; do
+		for color in "" -$(echo ${_colors} | sed 's| | -|g'); do
 			for res in "" -{,x}hdpi; do
-				vmove ${_themedir}/Graphite-${color}-Light-compact-nord${res}
+				vmove ${_themedir}/Graphite${color}-Light-compact-nord${res}
 			done
 		done
 	}
@@ -170,75 +185,93 @@ graphite-gtk-theme-nord-light-compact_package() {
 
 graphite-gtk-theme-compact_package() {
 	short_desc+=" - compact variant"
-	build_style=meta
+	pkg_install() {
+		for color in "" -$(echo ${_colors} | sed 's| | -|g'); do
+			for res in "" -{,x}hdpi; do
+				vmove ${_themedir}/Graphite${color}-compact${res}
+			done
+		done
+	}
+}
+
+graphite-gtk-theme-compact-all_package() {
+	short_desc+=" - all compact variants"
+	metapackage=yes
 	depends="${sourcepkg}-black-compact ${sourcepkg}-dark-compact ${sourcepkg}-light-compact
-	 ${sourcepkg}-nord-dark-compact ${sourcepkg}-nord-light-compact"
+	 ${sourcepkg}-nord-compact ${sourcepkg}-nord-dark-compact ${sourcepkg}-nord-light-compact"
+}
+
+graphite-gtk-theme-all_package() {
+	short_desc+=" - all variants"
+	metapackage=yes
+	depends="${sourcepkg}-black ${sourcepkg}-dark ${sourcepkg}-light ${sourcepkg}-nord
+	 ${sourcepkg}-nord-dark ${sourcepkg}-nord-light ${sourcepkg}-compact-all"
 }
 
 # Transitional dummy packages. These will be removed in a future update.
 Graphite-gtk-theme_package() {
 	short_desc+=" (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}>=${version}_${revision}"
 }
 
 Graphite-gtk-theme-black_package() {
 	short_desc+=" - black variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-black>=${version}_${revision}"
 }
 
 Graphite-gtk-theme-black-compact_package() {
 	short_desc+="- black compact variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-black-compact>=${version}_${revision}"
 }
 
 Graphite-gtk-theme-dark_package() {
 	short_desc+=" - dark variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-dark>=${version}_${revision}"
 }
 
 Graphite-gtk-theme-dark-compact_package() {
 	short_desc+=" - dark compact variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-dark-compact>=${version}_${revision}"
 }
 
 Graphite-gtk-theme-light_package() {
 	short_desc+=" - light variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-light>=${version}_${revision}"
 }
 
 Graphite-gtk-theme-light-compact_package() {
 	short_desc+=" - light compact variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-light-compact>=${version}_${revision}"
 }
 
 Graphite-gtk-theme-nord-dark_package() {
 	short_desc+=" - nord variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-nord-dark>=${version}_${revision}"
 }
 
 Graphite-gtk-theme-nord-dark-compact_package() {
 	short_desc+=" - nord dark compact variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-nord-dark-compact>=${version}_${revision}"
 }
 
 Graphite-gtk-theme-nord-dark_package() {
 	short_desc+="- nord variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-nord-dark>=${version}_${revision}"
 }
 
 Graphite-gtk-theme-nord-light-compact_package() {
 	short_desc+=" - nord light compact variant (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 	depends="${sourcepkg}-nord-light-compact>=${version}_${revision}"
 }
 

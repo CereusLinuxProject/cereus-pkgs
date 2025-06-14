@@ -19,55 +19,44 @@ _kvantumdir="usr/share/Kvantum"
 _colors="blue green orange pink purple red teal yellow"
 repository=cereus-extra
 
-do_install() {
-	vmkdir usr/share/Kvantum
-	for variant in black dark light Nord-{dark,light}; do
-		vcopy "${variant}/*" ${_kvantumdir}
-	done
+_install_variant() {
+	_variant="$1"
+	vmkdir "${_kvantumdir}"
+	cp -a ${_variant}/* ${PKGDESTDIR}/${_kvantumdir}
 }
 
 graphite-kvantum-theme-black_package() {
 	short_desc+=" - black variant"
 	pkg_install() {
-		vmove ${_kvantumdir}/"*"-black
+		_install_variant black
 	}
 }
 
 graphite-kvantum-theme-dark_package() {
 	short_desc+=" - dark variant"
 	pkg_install() {
-		for color in ${_colors}; do
-			vmove ${_kvantumdir}/Graphite-${color}-dark
-		done
+		_install_variant dark
 	}
 }
 
 graphite-kvantum-theme-light_package() {
 	short_desc+=" - light variant"
 	pkg_install() {
-		for color in ${_colors}; do
-			vmove ${_kvantumdir}/Graphite-${color}-light
-		done
+		_install_variant light
 	}
 }
 
 graphite-kvantum-theme-nord-dark_package() {
 	short_desc+=" - nord dark variant"
 	pkg_install() {
-		for color in ${_colors}; do
-			vmove ${_kvantumdir}/Graphite-${color}-Nord-dark
-		done
+		_install_variant Nord-dark
 	}
 }
 
 graphite-kvantum-theme-nord-light_package() {
 	short_desc+=" - nord light variant"
 	pkg_install() {
-		for color in ${_colors}; do
-			vmove ${_kvantumdir}/Graphite-${color}-Nord-light
-		done
-		# TO-DO: normalize path names
-		vmove ${_kvantumdir}/Graphite-teal-nord-light
+		_install_variant Nord-light
 	}
 }
 

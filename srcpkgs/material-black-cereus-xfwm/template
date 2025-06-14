@@ -12,7 +12,7 @@ maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 # https://github.com/rtlewis1/GTK/blob/Material-Black-Colors-Desktop/README.md
 license="GPL-3.0-or-later AND MIT"
 homepage="https://codeberg.org/cereus-linux/material-black-cereus-xfwm"
-distfiles="${homepage}/archive/${_commit}.tar.gz"
+distfiles="${homepage}/archive/${version}.tar.gz"
 checksum=9e411daea7b99e07d5f8e2804c441f6ff6b761f649622777d4dfb9b67b666388
 
 do_install() {

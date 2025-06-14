@@ -15,6 +15,11 @@ distfiles="${homepage}/archive/${_commit}.tar.gz"
 checksum=edb7ed4c815198314a2e36af745a65b02427592bfaeea6fe19950c979b1256d8
 repository=cereus-extra
 
+post_patch() {
+	# Fix from https://forums.gentoo.org/viewtopic-p-8860838.html
+	vsed -i 's:po-dir:po_dir:' setup.cfg
+}
+
 post_install() {
 	vinstall data/oblogout.conf 644 etc/
 }

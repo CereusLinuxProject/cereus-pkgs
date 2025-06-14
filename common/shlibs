@@ -1952,8 +1952,6 @@ libQt5Bodymovin.so.5 qt5-lottie-5.15.2_3
 libQt5WebKit.so.5 qt5-webkit-5.6.0_1
 libQt5WebKitWidgets.so.5 qt5-webkit-5.6.0_1
 libx265.so.209 x265-3.6_1
-libQt5Xdg.so.3 libqt5xdg-3.2.0_1
-libQt5XdgIconLoader.so.3 libqt5xdg-3.2.0_1
 libQt6Xdg.so.4 libqtxdg-4.0.0_1
 libQt6XdgIconLoader.so.4 libqtxdg-4.0.0_1
 libqwt-qt5.so.6.3 qwt-6.3.0_1
@@ -4570,6 +4568,7 @@ libxviewer.so libxviewer-3.4.6_3
 libtouche.so.0 libtouche-2.0.14_1
 libcrypto.so.1.1 libcrypto1.1-1.1.1t_2
 libfm-qt.so.14 libfm-qt-legacy-1.4.0_1
+libQt5Xdg.so.3 libqtxdg-legacy-3.12.0_1
 libQt5XdgIconLoader.so.3 libqtxdg-legacy-3.12.0_1
 libkdecorations2.so.5 kdecoration-5.27.11_2
 libxed.so libxed-3.6.6_3

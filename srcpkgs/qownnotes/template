@@ -1,12 +1,13 @@
 # Template file for 'qownnotes'
 pkgname=qownnotes
-version=25.6.3
+version=25.6.4
 revision=1
 build_style=cmake
 configure_args="-DBUILD_WITH_SYSTEM_BOTAN=ON
-  -DQON_QT6_BUILD=ON"
+	-DQON_QT6_BUILD=ON
+	-DBUILD_WITH_LIBGIT2=$(vopt_if libgit2 ON OFF)"
 hostmakedepends="pkg-config qt6-base qt6-tools"
-makedepends="botan3-devel qt6-base-devel qt6-declarative-devel
+makedepends="botan3-devel qt6-base-devel qt6-declarative-devel libgit2-devel
  aspell-devel qt6-qt5compat-devel qt6-svg-devel qt6-websockets-devel"
 depends="qt6-plugin-sqlite"
 short_desc="Plain-text file markdown note taking with Nextcloud/ownCloud integration"
@@ -15,8 +16,11 @@ license="GPL-2.0-or-later"
 homepage="https://github.com/pbek/QOwnNotes"
 changelog="https://raw.githubusercontent.com/pbek/QOwnNotes/refs/tags/v${version}/CHANGELOG.md"
 distfiles="${homepage}/releases/download/v${version}/qownnotes-${version}.tar.xz"
-checksum=d52a6afa79426fe0b7b6edf0eef16e5b1e501e5d5e6109bf7f12d18dcce9d8e3
+checksum=08bfe3ad6772069136eccbb28cc6923bba1fceb0a285789ed79c5bb965634b6f
 repository=cereus-extra
+
+build_options="libgit2"
+desc_option_libgit2="Enable libgit2 support"
 
 post_install() {
 	rename QOwnNotes qownnotes "${DESTDIR}/usr/bin/QOwnNotes"

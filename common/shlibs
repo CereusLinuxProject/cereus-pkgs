@@ -4584,4 +4584,5 @@ libklassycommon5.so.6 klassy-qt5-6.2.breeze6.2.1_1
 liblightlycommon6.so.6 lightly-qt6-0.5.8_1
 liblightlycommon5.so.6 lightly-qt5-0.5.8_1
 libbotan-3.so.8 botan3-3.8.1_1
-libwebkit2gtk-4.0.so.37 webkit2gtk-2.44.2_1 
+libwebkit2gtk-4.0.so.37 webkit2gtk-2.44.2_1
+libMauiMan4.so.4 mauiman-4.0.2_1

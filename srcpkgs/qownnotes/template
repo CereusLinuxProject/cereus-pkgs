@@ -1,14 +1,15 @@
 # Template file for 'qownnotes'
 pkgname=qownnotes
-version=25.6.4
+version=25.7.4
 revision=1
 build_style=cmake
 configure_args="-DBUILD_WITH_SYSTEM_BOTAN=ON
 	-DQON_QT6_BUILD=ON
 	-DBUILD_WITH_LIBGIT2=$(vopt_if libgit2 ON OFF)"
 hostmakedepends="pkg-config qt6-base qt6-tools"
-makedepends="botan3-devel qt6-base-devel qt6-declarative-devel libgit2-devel
- aspell-devel qt6-qt5compat-devel qt6-svg-devel qt6-websockets-devel"
+makedepends="botan3-devel qt6-base-devel qt6-declarative-devel
+ aspell-devel qt6-qt5compat-devel qt6-svg-devel qt6-websockets-devel
+ $(vopt_if libgit2 libgit2-devel)"
 depends="qt6-plugin-sqlite"
 short_desc="Plain-text file markdown note taking with Nextcloud/ownCloud integration"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
@@ -16,7 +17,7 @@ license="GPL-2.0-or-later"
 homepage="https://github.com/pbek/QOwnNotes"
 changelog="https://raw.githubusercontent.com/pbek/QOwnNotes/refs/tags/v${version}/CHANGELOG.md"
 distfiles="${homepage}/releases/download/v${version}/qownnotes-${version}.tar.xz"
-checksum=08bfe3ad6772069136eccbb28cc6923bba1fceb0a285789ed79c5bb965634b6f
+checksum=ca3ea373f5b4f3a70fb811ba2222f9c1c82ae62cbb8c3ce94d22d27f25f03f21
 repository=cereus-extra
 
 build_options="libgit2"

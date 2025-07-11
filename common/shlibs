@@ -4589,3 +4589,8 @@ libMauiMan4.so.4 mauiman-4.0.2_1
 libMauiKit4.so.4 mauikit-4.0.2_1
 libMauiKitFileBrowsing4.so.4 mauikit-filebrowsing-4.0.2_1
 libMauiKitAccounts4.so.4 mauikit-accounts-4.0.2_1
+libncutil.so nchat-5.8.4_1
+libtdclientshared.so nchat-5.8.4_1
+libtgchat.so nchat-5.8.4_1
+libduchat.so nchat-5.8.4_1
+libwmchat.so nchat-5.8.4_1

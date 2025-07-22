@@ -1,11 +1,11 @@
 # Template file for 'breeze-enhanced'
 pkgname=breeze-enhanced
 version=6.3
-revision=1
+revision=2
 build_style=cmake
 hostmakedepends="qt6-base-devel extra-cmake-modules gettext"
 makedepends="kf6-kdecoration-devel kf6-kcmutils-devel kf6-kguiaddons-devel
- kf6-kwindowsystem-devel kf6-ki18n-devel qt6-widgets qt6-dbus"
+ kf6-kwindowsystem-devel kf6-ki18n-devel"
 short_desc="Fork of KDE Breeze decoration with additional options"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-3.0-or-later"

@@ -3,7 +3,7 @@
 
 pkgname=youtube-music-bin
 _pkgname=${pkgname%-bin}
-version=3.9.0
+version=3.10.0
 revision=1
 archs="x86_64"
 build_style=fetch
@@ -17,7 +17,7 @@ changelog="https://raw.githubusercontent.com/th-ch/youtube-music/refs/heads/mast
 # License is missing in deb package
 distfiles="https://github.com/th-ch/youtube-music/releases/download/v${version}/${_pkgname}_${version}_amd64.deb
  https://github.com/th-ch/youtube-music/raw/v${version}/license"
-checksum="ea324010f288143ff7807ff958135034ae6937bd58bfe9f1a83fe1377cf13be6
+checksum="ff7997059cd6ae6084473e5906c726b01fc6dd21604d91a6eb670017f544d4dd
  e7e14b3b771ecadb23f6ee0b6f99d1553e385e35cdb44fc8e36ee7c878dacd08"
 repository="cereus-extra"
 

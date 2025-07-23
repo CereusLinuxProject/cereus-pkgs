@@ -2,7 +2,7 @@
 # Reference was taken from AUR: https://aur.archlinux.org/packages/onlyoffice-bin
 pkgname=onlyoffice-desktopeditors-bin
 _pkgname=${pkgname%-bin}
-version=9.0.0
+version=9.0.3
 revision=1
 archs="x86_64"
 depends="curl xdg-utils dejavu-fonts-ttf liberation-fonts-ttf
@@ -12,17 +12,17 @@ maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="AGPL-3.0-only"
 homepage="https://www.onlyoffice.com"
 changelog="https://github.com/ONLYOFFICE/DesktopEditors/blob/master/CHANGELOG.md"
-distfiles="https://github.com/ONLYOFFICE/DesktopEditors/releases/download/v${version}/${_pkgname}_amd64.deb"
-checksum=9868c516eba994620d823b88107a0edc03b8a6992e9b59627e3e6e91b7d6592f
+distfiles="https://github.com/ONLYOFFICE/DesktopEditors/releases/download/v${version}/${_pkgname}_amd64.deb>${_pkgname}-${version}_amd64.deb"
+checksum=2be5d07d9092f013ce52b861a605ce74ece06aaefa7ded9dd885831d2ab3f33a
 repository=cereus-extra
 nopie=yes
 
-skip_extraction="${_pkgname}_amd64.deb"
+skip_extraction="${_pkgname}-${version}_amd64.deb"
 
 do_install() {
-	vsrcextract -C "${DESTDIR}/" "${_pkgname}_amd64.deb"
+	vsrcextract -C "${DESTDIR}/" "${_pkgname}-${version}_amd64.deb"
     # Fix document opening in desktop entry
-	vsed -i 's|'"${_pkgname}"' %U|'"${_pkgname}"' %F|g' "${DESTDIR}/usr/share/applications/${_pkgname}.desktop"
+	vsed -i "s|${_pkgname} %U|${_pkgname} %F|g" "${DESTDIR}/usr/share/applications/${_pkgname}.desktop"
     # vlicense's not required since deb package already ships license file in expected path
 }
 

@@ -1,6 +1,6 @@
 # Template file for 'brave-bin'
 pkgname=brave-bin
-version=1.79.123
+version=1.80.125
 revision=1
 archs="x86_64"
 build_style="fetch"
@@ -9,7 +9,7 @@ maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="MPL-2.0"
 homepage="https://brave.com"
 distfiles="https://github.com/brave/brave-browser/releases/download/v${version}/brave-browser_${version}_amd64.deb"
-checksum=5d6c3c2a7db8e4a3e9271852473eb1985c228c9494e6f320a4350d47244c7f43
+checksum=8a1d574898031a3da003093250988ec8aaeebe9a2e728fa25b2384cb3ebb3369
 repository=cereus-extra
 
 do_install() {

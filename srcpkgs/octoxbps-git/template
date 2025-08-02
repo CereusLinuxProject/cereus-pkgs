@@ -2,9 +2,9 @@
 # Based on Void Linux's official octoxbps template:
 # https://github.com/void-linux/void-packages/blob/master/srcpkgs/octoxbps/template
 pkgname=octoxbps-git
-version=2025.05.27
+version=2025.07.19
 revision=1
-_commit="c8619a0033287b3c19352af1883bbc6a1538ad7d"
+_commit="3476828b0b5f64fba237e124aef14ccba07e89a4"
 build_style=qmake
 build_helper=qmake6
 hostmakedepends="pkg-config qt6-tools qt6-base"
@@ -16,7 +16,7 @@ license="GPL-2.0-or-later"
 homepage="https://tintaescura.com/projects/octoxbps/"
 changelog="https://raw.githubusercontent.com/aarnt/octoxbps/${_commit}/CHANGELOG"
 distfiles="https://github.com/aarnt/octoxbps/archive/${_commit}.tar.gz"
-checksum=fcc040abb2292c74976a9bd308c4d7f0c6b7a3a5994e93a43159cc6b7c152f7c
+checksum=91af81eb326f550e691b0c4191f86f72e590663e70bf52ce6339c4204a2101be
 conflicts="octoxbps"
 replaces="octoxbps>=0"
 repository=cereus-extra

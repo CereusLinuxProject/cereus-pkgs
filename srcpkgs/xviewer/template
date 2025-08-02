@@ -1,6 +1,6 @@
 # Template file for 'xviewer'
 pkgname=xviewer
-version=3.4.9
+version=3.4.10
 revision=1
 build_style=meson
 build_helper=gir
@@ -27,7 +27,7 @@ maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-2.0-or-later AND LGPL-2.1-or-later"
 homepage="https://github.com/linuxmint/xviewer"
 distfiles="${homepage}/archive/refs/tags/${version}.tar.gz"
-checksum=70888349418136548203ce4c8b61f5e3b091b3522d300cfc2f5821921a1425b4
+checksum=95eb0314624e47cada2d5fba096f1408ee3a80fffafb4de2492a15061598072b
 repository=cereus-extra
 
 libxviewer_package() {

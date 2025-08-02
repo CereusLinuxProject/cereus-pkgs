@@ -1,6 +1,6 @@
 # Template file for 'darkly-qt6'
 pkgname=darkly-qt6
-version=0.5.21
+version=0.5.22
 revision=1
 build_style=cmake
 configure_args="-DBUILD_TESTING=OFF
@@ -16,7 +16,7 @@ maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-2.0-or-later"
 homepage="https://github.com/Bali10050/Darkly"
 distfiles="${homepage}/archive/refs/tags/v${version}.tar.gz"
-checksum=bf3bd01d078850101182a7147e92300880ac6b21d5c1f35434d256e72d716524
+checksum=cd6a34ee054dacba6ee8cad15a969dd83d7ab3653eb2665c261d441b21092ace
 repository=cereus-extra
 
 darkly-qt6-devel_package() {

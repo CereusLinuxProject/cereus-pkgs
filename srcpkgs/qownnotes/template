@@ -1,11 +1,12 @@
 # Template file for 'qownnotes'
 pkgname=qownnotes
-version=25.8.1
+version=25.8.4
 revision=1
 build_style=cmake
 configure_args="-DBUILD_WITH_SYSTEM_BOTAN=ON
 	-DQON_QT6_BUILD=ON
-	-DBUILD_WITH_LIBGIT2=$(vopt_if libgit2 ON OFF)"
+	-DBUILD_WITH_LIBGIT2=$(vopt_if libgit2 ON OFF)
+	-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
 hostmakedepends="pkg-config qt6-base qt6-tools"
 makedepends="botan3-devel qt6-base-devel qt6-declarative-devel
  aspell-devel qt6-qt5compat-devel qt6-svg-devel qt6-websockets-devel
@@ -17,7 +18,7 @@ license="GPL-2.0-or-later"
 homepage="https://github.com/pbek/QOwnNotes"
 changelog="https://raw.githubusercontent.com/pbek/QOwnNotes/refs/tags/v${version}/CHANGELOG.md"
 distfiles="${homepage}/releases/download/v${version}/qownnotes-${version}.tar.xz"
-checksum=3a6c097bd2f17861c88e8ef08fbf06bd87a961fbd9a343da53074df0ab20eab6
+checksum=e83af0762987b822dc99288e1a086f25a8e8c1b85687c6ab9cbfe23cfc5fa294
 repository=cereus-extra
 
 build_options="libgit2"

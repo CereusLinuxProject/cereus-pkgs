@@ -1,6 +1,6 @@
 # Template file for 'freetube-bin'
 pkgname=freetube-bin
-version=0.23.5
+version=0.23.7
 revision=1
 archs="x86_64"
 build_style=fetch
@@ -10,15 +10,16 @@ maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="AGPL-3.0-or-later"
 homepage="https://freetubeapp.io"
 changelog="https://github.com/FreeTubeApp/FreeTube/releases/tag/v${version}"
-distfiles="https://github.com/FreeTubeApp/Freetube/releases/download/v${version}-beta/${pkgname%-bin}_${version}_amd64.deb
+#https://github.com/FreeTubeApp/FreeTube/releases/download/v${version}-beta/${pkgname%-bin}_0.23.6_beta_amd64.deb
+distfiles="https://github.com/FreeTubeApp/Freetube/releases/download/v${version}-beta/${pkgname%-bin}_${version}_beta_amd64.deb
  https://github.com/FreeTubeApp/FreeTube/blob/v${version}-beta/LICENSE"
-checksum="0cf6605b489493752946b7bf995a4dbcaf95b8df9f6c42f9ad181ed007ad87b2
- bf8dbe35dfc2eb16ec3828eb3d9c720c790a69265610afbb0e71e970e3b41232"
+checksum="f1b42942088ea6640e81dbced0c4efda5d5d54129f718c8848f9ae791d9fdf0a
+ d6591c0b22a2ab5eae3c3f3d010bb6ead556719c15ef983a6a2e6a2006047eed"
 nopie=yes
 repository=cereus-extra
 
 do_install() {
-	vextract -C "${DESTDIR}" "${pkgname%-bin}_${version}_amd64.deb"
+	vextract -C "${DESTDIR}" "${pkgname%-bin}_${version}_beta_amd64.deb"
 	vbin ${FILESDIR}/freetube.sh freetube
 	vlicense LICENSE
 }

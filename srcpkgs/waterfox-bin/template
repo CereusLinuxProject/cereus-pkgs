@@ -2,19 +2,19 @@
 # Reference was taken from https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=waterfox-bin
 pkgname=waterfox-bin
 _pkgname=${pkgname%-bin}
-version=6.5.11
+version=6.6.1
 revision=1
 archs="x86_64"
 build_style=fetch
 depends="ffmpeg hicolor-icon-theme startup-notification libnotify libXt
  mime-types"
 short_desc="Customizable privacy-conscious web browser (precompiled binaries)"
-maintainer="Kevin Figueroa <kfdevart@disroot.org>"
+maintainer="Kevin <kevin@disroot.org> Kevin Figueroa <kfdevart@disroot.org>"
 license="MPL-2.0"
 homepage="https://www.waterfox.net"
 changelog="${homepage}/docs/releases/${version}/"
 distfiles="https://cdn1.waterfox.net/${_pkgname}/releases/${version}/Linux_x86_64/${_pkgname}-${version}.tar.bz2"
-checksum=e3a8c17afa7160d67f7e6caedd1069805f3b5cf4e87e8e3fc0fb736571838bc5
+checksum=cb0f130a2ea5a641313d6a566b5d7762f51ccc8fe692018e0fe2bd4c065ba348
 replaces="waterfox-g4-bin>=0 waterfox-g5-bin>=0"
 repository=cereus-extra
 

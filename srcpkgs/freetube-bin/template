@@ -1,6 +1,6 @@
 # Template file for 'freetube-bin'
 pkgname=freetube-bin
-version=0.23.7
+version=0.23.8
 revision=1
 archs="x86_64"
 build_style=fetch
@@ -13,8 +13,8 @@ changelog="https://github.com/FreeTubeApp/FreeTube/releases/tag/v${version}"
 #https://github.com/FreeTubeApp/FreeTube/releases/download/v${version}-beta/${pkgname%-bin}_0.23.6_beta_amd64.deb
 distfiles="https://github.com/FreeTubeApp/Freetube/releases/download/v${version}-beta/${pkgname%-bin}_${version}_beta_amd64.deb
  https://github.com/FreeTubeApp/FreeTube/blob/v${version}-beta/LICENSE"
-checksum="f1b42942088ea6640e81dbced0c4efda5d5d54129f718c8848f9ae791d9fdf0a
- d6591c0b22a2ab5eae3c3f3d010bb6ead556719c15ef983a6a2e6a2006047eed"
+checksum="80ced0f255e44768020f3b48c16ec9b3d10c0c77e67373eb8b2ff064310cc46b
+ fdcd38e0a1b7f37e08a745df3f7f5c221c9456178a80df0f88db6b43dae8de53"
 nopie=yes
 repository=cereus-extra
 

@@ -1,6 +1,6 @@
 # Template file for 'zen-browser-bin'
 pkgname=zen-browser-bin
-version=1.14.9b
+version=1.15b
 revision=1
 archs="x86_64"
 build_style=fetch
@@ -9,7 +9,7 @@ maintainer="kevin <kevin@disroot.org>"
 license="MPL-2.0"
 homepage="https://github.com/zen-browser/desktop"
 distfiles="https://github.com/zen-browser/desktop/releases/download/${version}/zen.linux-x86_64.tar.xz>zen.linux-${version}-x86_64.tar.xz"
-checksum=3d5264cd45d41c074eb7c929fbc2a8eeae4f3beeef765ae8b3628c7a2b4423a1
+checksum=56e192b134cf31f3097ac001221d960d10f720ee94c499acb6a2260a5ee24731
 repository=cereus-extra
 
 do_install() {

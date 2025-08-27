@@ -1,6 +1,6 @@
 # Template file for 'markdownpart'
 pkgname=markdownpart
-version=25.04.2
+version=25.08.0
 revision=1
 build_style=cmake
 hostmakedepends="extra-cmake-modules gettext"
@@ -10,5 +10,5 @@ maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="LGPL-2.1-or-later"
 homepage="https://apps.kde.org/es/markdownpart/"
 distfiles="${KDE_SITE}/release-service/${version}/src/${pkgname}-${version}.tar.xz"
-checksum=87a451d88c0bd35a7e3cc7c61c75dfc7dad974e7d5d4178801ab319980119fd4
+checksum=b110d069a71bab5e54018b1c951963985609b979445f68f4d4818fdd0f6af6fd
 repository=cereus-extra

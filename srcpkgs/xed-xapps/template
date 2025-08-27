@@ -1,6 +1,6 @@
 # Template file for 'xed-xapps'
 pkgname=xed-xapps
-version=3.8.2
+version=3.8.4
 revision=1
 build_style=meson
 build_helper=gir
@@ -13,7 +13,7 @@ maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-2.0-or-later"
 homepage="https://github.com/linuxmint/xed"
 distfiles="${homepage}/archive/${version}.tar.gz"
-checksum=1ca2dd0917e634b9d85d91e0957e0628082ee392121ee42cb64619e8b0765eb2
+checksum=1660fd85506ff1c12ff09953f70abcd67e425d5a7a0c3f6ba7f49a0a38458c4f
 # both provide xed bin and man at the same path
 conflicts="xed"
 # needs dogtail which is not packaged and it doesn't seems to work inside a chroot

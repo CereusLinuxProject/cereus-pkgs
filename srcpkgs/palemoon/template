@@ -3,7 +3,7 @@
 # Original source: https://git.disroot.org/tuxliban/tutoriales_void/src/branch/master/Plantillas/palemoon/template
 
 pkgname=palemoon
-version=33.7.2
+version=33.8.1.2
 revision=1
 _debrev=1
 archs="i686 x86_64"
@@ -18,10 +18,10 @@ homepage="https://www.palemoon.org"
 
 if [ "$XBPS_TARGET_MACHINE" = "x86_64" ]; then
 	_debarch=amd64
-	checksum=f868233c681e649af215ad33a7f96db2a346b07ed84ba0c8ada48037de9bfadd
+	checksum=a3a1b8d1eefe3e69afd73a18972df1958c78a5eb398f1ddad4d7fb9952d61635
 else
 	_debarch=i386
-	checksum=efbc4be93053a3cffb15efd645c3933be02980b83d078bdd598075e0a669b515
+	checksum=9d28dac114101eb368d3903569c8547aec53651fc88918498af77143707d44b4
 fi
 
 distfiles="https://download.opensuse.org/repositories/home:/mx-packaging/Debian_12/${_debarch}/palemoon_${version}-${_debrev}mx23_${_debarch}.deb"

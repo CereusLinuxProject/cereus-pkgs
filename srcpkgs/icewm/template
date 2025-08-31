@@ -1,6 +1,6 @@
 # Template file for 'icewm'
 pkgname=icewm
-version=3.8.2
+version=3.9.0
 revision=1
 build_style=cmake
 make_cmd=make
@@ -10,7 +10,8 @@ hostmakedepends="python3-Markdown gettext-devel libtool mkfontdir perl
  pkg-config"
 makedepends="libSM-devel libXft-devel libXinerama-devel libXpm-devel
  libXrandr-devel libao-devel librsvg-devel libsndfile-devel
- libXcomposite-devel libXdamage-devel fribidi-devel imlib2-devel"
+ libXcomposite-devel libXdamage-devel fribidi-devel imlib2-devel
+ libXcursor-devel"
 depends="shared-mime-info"
 short_desc="Window Manager designed for speed, usability, and consistency"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
@@ -18,7 +19,7 @@ license="GPL-2.0-or-later"
 homepage="https://ice-wm.org/"
 changelog="https://raw.githubusercontent.com/ice-wm/icewm/master/NEWS"
 distfiles="https://github.com/ice-wm/icewm/archive/${version}.tar.gz"
-checksum=4c18c91cdad7eb2532090466b3f611df12a9f0b45f83cf5a728f5848bd453cff
+checksum=ca755cb024459ade86518f89202b8a92d3cb9957b9a5e17abdbf824f708ad8de
 repository=cereus-extra
 # broken tests
 make_check=no

@@ -1,0 +1,18 @@
+# Template file for 'kio-admin'
+pkgname=kio-admin
+version=25.08.0
+revision=1
+build_style=cmake
+configure_args="-DQT_MAJOR_VERSION=6
+ -DBUILD_TESTING=OFF
+ -Wno-dev"
+hostmakedepends="extra-cmake-modules qt6-tools qt6-base gettext"
+makedepends="kf6-ki18n-devel kf6-kcoreaddons-devel kf6-kio-devel
+ kf6-kdbusaddons-devel kf6-kguiaddons-devel polkit-qt6-devel"
+short_desc="Manage files as administrator using the admin:// KIO protocol"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
+license="GPL-2.0-or-later AND LGPL-2.0-or-later"
+homepage="https://invent.kde.org/system/kio-admin"
+distfiles="${KDE_SITE}/release-service/${version}/src/${pkgname}-${version}.tar.xz"
+checksum=21a57c0f7cb0c63f4e8497b5654be664655234b1b636880655040d33c2081613
+repository=cereus-extra

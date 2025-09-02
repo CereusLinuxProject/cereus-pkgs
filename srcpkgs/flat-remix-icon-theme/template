@@ -1,7 +1,7 @@
 # Template file for 'flat-remix-icon-theme'
 pkgname=flat-remix-icon-theme
-version=2024.02.01
-revision=3
+version=2025.07.09
+revision=1
 build_style=gnu-makefile
 metapackage=yes
 depends="${pkgname}-black
@@ -13,7 +13,7 @@ maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-3.0-or-later"
 homepage="https://github.com/daniruiz/flat-remix"
 distfiles="${homepage}/archive/refs/tags/${version//./}.tar.gz"
-checksum=f4ad5c51cfa72ccb6829b53f704529e96e44ef076fa58178132e56459a325702
+checksum=c48f473bdbcdadb41aa3c5fe3f3a4432704725f3cb399cea2c557380d9d30e70
 repository=cereus-extra
 
 flat-remix-icon-theme-black_package() {

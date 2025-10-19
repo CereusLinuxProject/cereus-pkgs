@@ -1,6 +1,6 @@
 # Template file for 'darkly-qt5'
 pkgname=darkly-qt5
-version=0.5.22
+version=0.5.23
 revision=1
 build_style=cmake
 configure_args="-DBUILD_QT6=OFF
@@ -17,7 +17,7 @@ maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-2.0-or-later"
 homepage="https://github.com/Bali10050/Darkly"
 distfiles="${homepage}/archive/refs/tags/v${version}.tar.gz"
-checksum=cd6a34ee054dacba6ee8cad15a969dd83d7ab3653eb2665c261d441b21092ace
+checksum=a897784e4e43fe7947afe65fd91e796f98f8eec6beec7f94a04f3c102c5d5577
 repository=cereus-extra
 
 post_install() {

@@ -1,0 +1,13 @@
+# Template file for 'qtextpad'
+pkgname=qtextpad
+version=1.12
+revision=1
+build_style=cmake
+makedepends="qt6-core qt6-widgets qt6-printsupport qt6-network kf6-syntax-highlighting-devel"
+short_desc="Lightweight cross‑platform text editor using KF6's syntax highlighting"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/zrax/qtextpad"
+distfiles="${homepage}/archive/refs/tags/${version}.tar.gz"
+checksum=b43d54625b060fedd14fb6c66056586a3f68beed699bbc90c0bced6e7492dd05
+repository=cereus-extra

@@ -1,0 +1,16 @@
+# Template file for 'qrunsvmgr'
+pkgname=qrunsvmgr
+version=0.2.5
+revision=1
+build_wrksrc="src"
+build_style=cmake
+configure_args="-DBUILD_DINIT_HELPER=OFF"
+hostmakedepends="qt6-tools pkg-config"
+makedepends="qt6-core qt6-base-devel"
+short_desc="Runit service manager GUI (Qt6)"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
+license="GPL-3.0-or-later"
+homepage="https://codeberg.org/ItsZariep/qrunsvmgr"
+distfiles="https://codeberg.org/ItsZariep/qrunsvmgr/archive/${version}.tar.gz"
+checksum=ff412f9acd8cc3536cb95ab5159da58ee0e2d4444c071606f461400b2e1281bd
+repository=cereus-extra

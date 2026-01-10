@@ -1,0 +1,34 @@
+From 539eca0667d1b217ec2031ec02efa0c8d0a0c26b Mon Sep 17 00:00:00 2001
+From: Kevin Figueroa <kfdevart@disroot.org>
+Date: Sat, 10 Jan 2026 13:20:35 -0600
+Subject: [PATCH] disable consolepython plugin
+
+Since Void disabled the python3 plugin support for libpeas, this plugin
+is broken, so disabling is at build time makes it less confusing for
+the user. This patch is intended to be used with 
+linuxmint/xviewer-plugins#17 as it rewrites slideshowsuffle and
+export-to-folder to C. Otherwise they should be disabled too.
+
+For more details, see void-linux/void-packages@123e66d and the mentioned PR:
+
+https://github.com/void-linux/void-packages/commit/123e66d825b645fe7f2f0d33952a88c5bdf73b46
+https://github.com/linuxmint/xviewer-plugins/pull/17
+---
+ plugins/meson.build | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/plugins/meson.build b/plugins/meson.build
+index 7f8919a..431b29d 100644
+--- a/plugins/meson.build
++++ b/plugins/meson.build
+@@ -2,6 +2,6 @@ subdir('exif-display')
+ subdir('export-to-folder')
+ subdir('map')
+ # subdir('postr') # 'postr' binary not in Debian repos any more
+-subdir('pythonconsole')
++# subdir('pythonconsole') # Python3 plugins support for libpeas was removed from Void
+ subdir('send-by-mail')
+ subdir('slideshowshuffle')
+-- 
+2.51.2
+

@@ -1,7 +1,7 @@
 # Template file for 'xviewer-plugins'
 pkgname=xviewer-plugins
 version=3.4.3
-revision=1
+revision=2
 build_style=meson
 build_helper=gir
 hostmakedepends="pkg-config which intltool gettext"

@@ -1,0 +1,30 @@
+From ed669773a97c4740fb70ad754eff3cc822e2ef11 Mon Sep 17 00:00:00 2001
+From: Kevin Figueroa <kfdevart@disroot.org>
+Date: Fri, 9 Jan 2026 23:54:04 -0600
+Subject: [PATCH] disable python3 plugins
+
+Since Void disabled the python3 plugin support for libpeas, these
+plugins are broken, so disabling them at build time makes it less
+confusing for the user.
+For more details, see void-linux/void-packages@123e66d.
+
+https://github.com/void-linux/void-packages/commit/123e66d825b645fe7f2f0d33952a88c5bdf73b46
+---
+ plugins/meson.build | 3 ---
+ 1 file changed, 3 deletions(-)
+
+diff --git a/plugins/meson.build b/plugins/meson.build
+index 7f8919a..c69fae3 100644
+--- a/plugins/meson.build
++++ b/plugins/meson.build
+@@ -1,7 +1,4 @@
+ subdir('exif-display')
+-subdir('export-to-folder')
+ subdir('map')
+ # subdir('postr') # 'postr' binary not in Debian repos any more
+-subdir('pythonconsole')
+ subdir('send-by-mail')
+-subdir('slideshowshuffle')
+-- 
+2.51.2
+

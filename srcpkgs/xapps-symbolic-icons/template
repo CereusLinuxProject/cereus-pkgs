@@ -1,0 +1,13 @@
+# Template file for 'xapps-symbolic-icons'
+pkgname=xapps-symbolic-icons
+version=1.0.8
+revision=1
+build_style=meson
+depends="hicolor-icon-theme"
+short_desc="Set of symbolic icons for Gtk applications and projects"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
+license="GPL-3.0-only AND LGPL-3.0-only"
+homepage="https://github.com/xapp-project/xapp-symbolic-icons"
+distfiles="${homepage}/archive/refs/tags/${version}.tar.gz"
+checksum=5cd9810ab9c4f002a4fd5e4557794b2e8460bf253faeef0301c3aa888c042e5c
+repository=cereus-extra

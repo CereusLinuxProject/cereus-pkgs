@@ -2,7 +2,7 @@
 # Reference was taken from AUR: https://aur.archlinux.org/packages/onlyoffice-bin
 pkgname=onlyoffice-desktopeditors-bin
 _pkgname=${pkgname%-bin}
-version=9.1.0
+version=9.2.1
 revision=1
 archs="x86_64"
 depends="curl xdg-utils dejavu-fonts-ttf liberation-fonts-ttf
@@ -13,7 +13,7 @@ license="AGPL-3.0-only"
 homepage="https://www.onlyoffice.com"
 changelog="https://github.com/ONLYOFFICE/DesktopEditors/blob/master/CHANGELOG.md"
 distfiles="https://github.com/ONLYOFFICE/DesktopEditors/releases/download/v${version}/${_pkgname}_amd64.deb>${_pkgname}-${version}_amd64.deb"
-checksum=0f7e84ee16024c9f4bc3d5e707c9f13063090c946133e2be6ef8ae33dbaece19
+checksum=ae453f124249e5dfa99601b71d5e00f655adc890158130d439467d7741e3969e
 repository=cereus-extra
 nopie=yes
 

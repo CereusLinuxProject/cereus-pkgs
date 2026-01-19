@@ -2,7 +2,7 @@
 # Reference was taken from https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=waterfox-bin
 pkgname=waterfox-bin
 _pkgname=${pkgname%-bin}
-version=6.6.7
+version=6.6.8
 revision=1
 archs="x86_64"
 build_style=fetch
@@ -14,7 +14,7 @@ license="MPL-2.0"
 homepage="https://www.waterfox.net"
 changelog="${homepage}/docs/releases/${version}/"
 distfiles="https://cdn1.waterfox.net/${_pkgname}/releases/${version}/Linux_x86_64/${_pkgname}-${version}.tar.bz2"
-checksum=fd1dab42460f27c6e80bf8472b7f54b8890ac801e3696fadeece5a6966584d32
+checksum=@6de0efd83395429db41f54ce07eac87cff2d72f91f5e86431faabe421d3be728
 replaces="waterfox-g4-bin>=0 waterfox-g5-bin>=0"
 repository=cereus-extra
 

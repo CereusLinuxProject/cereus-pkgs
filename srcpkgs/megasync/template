@@ -5,9 +5,9 @@
 # https://github.com/ibhagwan/megasync-template
 
 pkgname=megasync
-version=6.1.0.2
+version=6.1.1.0
 revision=1
-_sdk_commit="63daa4d1be2944210b974e5f7006641cbd353b80"
+_sdk_commit="1c13b13cb90c77f61e38d228b73a4a6fa8df67ca"
 build_style=cmake
 configure_args="-DCMAKE_BUILD_TYPE:STRING='None'
  -DCMAKE_MODULE_PATH:PATH='${XBPS_BUILDDIR}/${pkgname}-${version}/src/MEGASync/mega/cmake/modules/packages'
@@ -34,8 +34,8 @@ changelog="https://github.com/meganz/MEGAsync/releases/tag/v${version}_Linux"
 distfiles="https://github.com/meganz/MEGAsync/archive/refs/tags/v${version}_Linux.tar.gz
  https://github.com/meganz/sdk/archive/${_sdk_commit}.tar.gz>mega-sdk-${_sdk_commit}.tar.gz
  https://raw.githubusercontent.com/meganz/sdk/${_sdk_commit}/.clang-format>clang-format-${_sdk_commit}"
-checksum="@f6d1b45cf4f1523f897cb04963f16dd763012687743efdd45d8965d8e8e27217
- @8cbc6c16a74d149739436aafc0044e64f53c8a4b29040962f63233371bba19e3
+checksum="@5033da64f16009d6286c6e48b3779f3304f872be237504cb85c135504f86a440
+ @83ddf9d9bc448009c2f9d43a42476837bdc9cccda7f8aa72ab9b60debb4d8245
  0edced6d312b725485c57b93e666d9237aa692163210e215fc0dec99e0e74c7b"
 restricted=yes
 repository=nonfree

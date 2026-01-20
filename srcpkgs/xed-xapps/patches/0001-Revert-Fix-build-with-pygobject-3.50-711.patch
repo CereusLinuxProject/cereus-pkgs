@@ -1,0 +1,123 @@
+From 232dc173eb68b62c479ba95510f6bebe2ed1ce64 Mon Sep 17 00:00:00 2001
+From: Kevin Figueroa <kfdevart@disroot.org>
+Date: Mon, 19 Jan 2026 17:01:02 -0600
+Subject: [PATCH] Revert "Fix build with pygobject-3.50+ (#711)"
+
+This reverts commit 13f55ff3f0db4e4f3b75883260bb56afbad08fd2.
+---
+ debian/control           |  1 -
+ meson.build              |  4 ----
+ xed/xed-app.c            |  8 --------
+ xed/xed-plugins-engine.c | 16 ----------------
+ 4 files changed, 29 deletions(-)
+
+diff --git a/debian/control b/debian/control
+index 55338c4..c433a54 100644
+--- a/debian/control
++++ b/debian/control
+@@ -17,7 +17,6 @@ Build-Depends: debhelper-compat (= 12),
+                libx11-dev,
+                libxml2-dev,
+                python3,
+-               python-gi-dev,
+                yelp-tools,
+                meson
+ Standards-Version: 4.5.0
+diff --git a/meson.build b/meson.build
+index aed4c27..c7e7b42 100644
+--- a/meson.build
++++ b/meson.build
+@@ -40,10 +40,6 @@ pango = dependency('pango')
+ 
+ if gir_dep.found()
+     xed_conf.set('ENABLE_INTROSPECTION', 1)
+-    pygobject_dep = dependency('pygobject-3.0')
+-    pygobject_version = pygobject_dep.version().split('.')
+-    xed_conf.set('PYGOBJECT_MAJOR_VERSION', pygobject_version[0])
+-    xed_conf.set('PYGOBJECT_MINOR_VERSION', pygobject_version[1])
+ endif
+ 
+ enable_spell = get_option('enable_spell')
+diff --git a/xed/xed-app.c b/xed/xed-app.c
+index af7c19c..85809f2 100644
+--- a/xed/xed-app.c
++++ b/xed/xed-app.c
+@@ -38,12 +38,8 @@
+ #include <gtksourceview/gtksource.h>
+ 
+ #ifdef ENABLE_INTROSPECTION
+-#if PYGOBJECT_MAJOR_VERSION > 3 || (PYGOBJECT_MAJOR_VERSION == 3 && PYGOBJECT_MINOR_VERSION > 50)
+-#include <girepository/girepository.h>
+-#else
+ #include <girepository.h>
+ #endif
+-#endif
+ 
+ #include "xed-app.h"
+ #include "xed-commands.h"
+@@ -996,11 +992,7 @@ xed_app_init (XedApp *app)
+     g_application_add_main_option_entries (G_APPLICATION (app), options);
+ 
+ #ifdef ENABLE_INTROSPECTION
+-#if PYGOBJECT_MAJOR_VERSION > 3 || (PYGOBJECT_MAJOR_VERSION == 3 && PYGOBJECT_MINOR_VERSION > 50)
+-    g_application_add_option_group (G_APPLICATION (app), gi_repository_get_option_group ());
+-#else
+     g_application_add_option_group (G_APPLICATION (app), g_irepository_get_option_group ());
+-#endif
+ #endif
+ 
+     setup_actions (app);
+diff --git a/xed/xed-plugins-engine.c b/xed/xed-plugins-engine.c
+index ca05a66..58dd556 100644
+--- a/xed/xed-plugins-engine.c
++++ b/xed/xed-plugins-engine.c
+@@ -31,11 +31,7 @@
+ #include <config.h>
+ #include <string.h>
+ #include <glib/gi18n.h>
+-#if PYGOBJECT_MAJOR_VERSION > 3 || (PYGOBJECT_MAJOR_VERSION == 3 && PYGOBJECT_MINOR_VERSION > 50)
+-#include <girepository/girepository.h>
+-#else
+ #include <girepository.h>
+-#endif
+ 
+ #include "xed-plugins-engine.h"
+ #include "xed-debug.h"
+@@ -70,11 +66,7 @@ xed_plugins_engine_init (XedPluginsEngine *engine)
+ 
+     typelib_dir = g_build_filename (xed_dirs_get_xed_lib_dir (), "girepository-1.0", NULL);
+ 
+-#if PYGOBJECT_MAJOR_VERSION > 3 || (PYGOBJECT_MAJOR_VERSION == 3 && PYGOBJECT_MINOR_VERSION > 50)
+-    if (!gi_repository_require_private (gi_repository_dup_default (), typelib_dir, "Xed", "1.0", 0, &error))
+-#else
+     if (!g_irepository_require_private (g_irepository_get_default (), typelib_dir, "Xed", "1.0", 0, &error))
+-#endif
+     {
+         g_warning ("Could not load Xed repository: %s", error->message);
+         g_error_free (error);
+@@ -84,22 +76,14 @@ xed_plugins_engine_init (XedPluginsEngine *engine)
+     g_free (typelib_dir);
+ 
+     /* This should be moved to libpeas */
+-#if PYGOBJECT_MAJOR_VERSION > 3 || (PYGOBJECT_MAJOR_VERSION == 3 && PYGOBJECT_MINOR_VERSION > 50)
+-    if (!gi_repository_require (gi_repository_dup_default (), "Peas", "1.0", 0, &error))
+-#else
+     if (!g_irepository_require (g_irepository_get_default (), "Peas", "1.0", 0, &error))
+-#endif
+     {
+         g_warning ("Could not load Peas repository: %s", error->message);
+         g_error_free (error);
+         error = NULL;
+     }
+ 
+-#if PYGOBJECT_MAJOR_VERSION > 3 || (PYGOBJECT_MAJOR_VERSION == 3 && PYGOBJECT_MINOR_VERSION > 50)
+-    if (!gi_repository_require (gi_repository_dup_default (), "PeasGtk", "1.0", 0, &error))
+-#else
+     if (!g_irepository_require (g_irepository_get_default (), "PeasGtk", "1.0", 0, &error))
+-#endif
+     {
+         g_warning ("Could not load PeasGtk repository: %s", error->message);
+         g_error_free (error);
+-- 
+2.52.0
+

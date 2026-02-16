@@ -1,7 +1,7 @@
 # Template file for 'screengrab'
 pkgname=screengrab
 version=3.1.0
-revision=1
+revision=2
 build_style=cmake
 hostmakedepends="qt6-base-devel lxqt-build-tools perl"
 makedepends="kf6-kwindowsystem-devel qt6-wayland-devel

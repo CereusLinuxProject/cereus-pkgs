@@ -5,7 +5,7 @@ revision=1
 build_wrksrc="src"
 build_style=cmake
 configure_args="-DBUILD_DINIT_HELPER=OFF"
-hostmakedepends="qt6-tools pkg-config"
+hostmakedepends="qt6-tools pkg-config qt6-base"
 makedepends="qt6-core qt6-base-devel"
 short_desc="Runit service manager GUI (Qt6)"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"

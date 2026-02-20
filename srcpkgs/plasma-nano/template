@@ -1,0 +1,22 @@
+# Template file for 'plasma-nano'
+pkgname=plasma-nano
+version=6.5.5
+revision=1
+build_style=cmake
+configure_args="-DBUILD_TESTING=OFF
+ -DKDE_INSTALL_USE_QT_SYS_PATHS=ON
+ -DKDE_INSTALL_QMLDIR=lib/qt6/qml 
+ -DKDE_INSTALL_QTPLUGINDIR=lib/qt6/plugins"
+hostmakedepends="extra-cmake-modules qt6-base qt6-tools gettext
+ kf6-kconfig-devel kf6-kpackage-devel"
+makedepends="qt6-svg-devel kf6-kwindowsystem-devel kf6-ki18n-devel
+ kf6-kservice-devel libplasma-devel kf6-kwayland-devel kf6-kitemmodels-devel
+ plasma-workspace-devel kf6-kconfig-devel kf6-kpackage-devel"
+depends="plasma-workspace"
+short_desc="Minimal plasma shell package intended for embedded devices"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
+license="GPL-2.0-or-later AND LGPL-2.1-or-later"
+homepage="https://invent.kde.org/plasma/plasma-nano"
+distfiles="${KDE_SITE}/plasma/${version}/${pkgname}-${version}.tar.xz"
+checksum=54c7f2a03aac01db735fbda4729473c799a2135da868f18759d30bb9b61eefde
+repository=cereus-extra

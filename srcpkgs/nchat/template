@@ -1,6 +1,6 @@
 # Template file for 'nchat'
 pkgname=nchat
-version=5.12.21
+version=5.17.26
 revision=1
 build_style=cmake
 hostmakedepends="gperf help2man go pkg-config"
@@ -11,7 +11,7 @@ maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="MIT"
 homepage="https://github.com/d99kris/nchat"
 distfiles="${homepage}/archive/refs/tags/v${version}.tar.gz"
-checksum=@4c110fd714444c4a917e6b3b5492f4e72f2502a5e9c4f3434755be7d608fbbdc
+checksum=0c8730052d1c4ca2b41102eb433bdae8643b0e261a6dbaab8c0aca9f2971465e
 repository=cereus-extra
 
 post_install() {

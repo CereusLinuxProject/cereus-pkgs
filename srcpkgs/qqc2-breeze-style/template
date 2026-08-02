@@ -1,7 +1,7 @@
 # Template file for 'qqc2-breeze-style'
 # shellcheck disable=all
 pkgname=qqc2-breeze-style
-version=6.5.5
+version=6.6.3
 revision=1
 build_style=cmake
 configure_args="-DCMAKE_BUILD_TYPE=RelWithDebInfo"
@@ -15,5 +15,5 @@ maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="LGPL-2.1-only OR LGPL-3.0-only"
 homepage="https://invent.kde.org/plasma/qqc2-breeze-style"
 distfiles="${KDE_SITE}/plasma/${version}/${pkgname}-${version}.tar.xz"
-checksum=1ce7b641570f7111d751b54400e80832e0c3122d3cb6a4c2a01b16c2ed71b5af
+checksum=bc5864726fcdf0f3c81cbbc97aa4d5327ccfdd86a621b475ce5cd3e2ad6c4348
 repository=cereus-extra

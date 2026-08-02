@@ -1,6 +1,6 @@
 # Template file for 'pix'
 pkgname=pix
-version=3.4.5
+version=3.4.10
 revision=1
 build_style=meson
 configure_args="$(vopt_bool exiv2) $(vopt_bool clutter) $(vopt_bool gstreamer)
@@ -8,7 +8,8 @@ configure_args="$(vopt_bool exiv2) $(vopt_bool clutter) $(vopt_bool gstreamer)
  $(vopt_bool libtiff) $(vopt_bool libwebp) $(vopt_bool libjxl)
  $(vopt_bool libheif) $(vopt_bool libraw) $(vopt_bool librsvg)
  $(vopt_bool libsecret) $(vopt_bool webservices) $(vopt_bool libbrasero)"
-hostmakedepends="intltool itstool gettext libtool bison flex"
+hostmakedepends="intltool itstool gettext libtool bison flex pkg-config
+ glib-devel"
 makedepends="glib-devel pkg-config gsettings-desktop-schemas-devel
  libjpeg-turbo-devel xapps-devel zlib-devel
  libxkbfile-devel gtk+3-devel $(vopt_if exiv2 exiv2-devel)
@@ -52,7 +53,7 @@ maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-2.0-or-later"
 homepage="https://github.com/linuxmint/pix"
 distfiles="${homepage}/archive/refs/tags/${version}.tar.gz"
-checksum=d0fc194e404a199518ca3f507468788041162ce31286aa45dff56df15635d44d
+checksum=d765e779ee6e7d8220fe556c010c181ae69be059d53192d628f5bec5fdc9082b
 repository=cereus-extra
 
 pix-devel_package() {

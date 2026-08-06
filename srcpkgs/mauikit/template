@@ -3,11 +3,12 @@ pkgname=mauikit
 version=4.0.2
 revision=1
 build_style=cmake
-hostmakedepends="extra-cmake-modules qt6-base-devel gettext"
+build_helper=qemu
+hostmakedepends="extra-cmake-modules qt6-base qt6-tools gettext"
 makedepends="kf6-kcoreaddons-devel kf6-ki18n-devel kf6-kirigami-devel
  kf6-knotifications-devel kf6-knotifications-devel kf6-kwindowsystem-devel
  mauiman-devel kf6-purpose-devel qt6-declarative-devel qt6-multimedia-devel
- qt6-svg-devel"
+ qt6-svg-devel qt6-base"
 short_desc="Templated convergent controls and multi-platform utilities for Maui apps"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="LGPL-3.0-only"

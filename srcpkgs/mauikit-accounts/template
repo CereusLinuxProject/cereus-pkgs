@@ -3,9 +3,9 @@ pkgname=mauikit-accounts
 version=4.0.2
 revision=1
 build_style=cmake
-hostmakedepends="extra-cmake-modules qt6-base-devel gettext"
-makedepends="kf6-kcoreaddons-devel mauikit-devel qt6-declarative-devel
- qt6-declarative-private-devel qt6-base-private-devel kf6-ki18n-devel"
+hostmakedepends="extra-cmake-modules qt6-base-devel qt6-declarative-devel
+ qt6-declarative-private-devel gettext"
+makedepends="kf6-kcoreaddons-devel mauikit-devel kf6-ki18n-devel"
 short_desc="MauiKit utilities to handle user accounts"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="LGPL-3.0-only"

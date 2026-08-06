@@ -3,10 +3,10 @@ pkgname=mauikit-filebrowsing
 version=4.0.2
 revision=1
 build_style=cmake
-hostmakedepends="extra-cmake-modules gettext"
+hostmakedepends="extra-cmake-modules gettext qt6-declarative-devel
+ qt6-declarative-private-devel kf6-kconfig-devel"
 makedepends="kf6-kconfig-devel kf6-kcoreaddons-devel kf6-ki18n-devel
- kf6-kio-devel kf6-kservice-devel mauikit-devel qt6-declarative-devel
- qt6-declarative-private-devel kf6-solid-devel"
+ kf6-kio-devel kf6-kservice-devel mauikit-devel kf6-solid-devel"
 short_desc="MauiKit File Browsing utilities and controls"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="LGPL-3.0-only"

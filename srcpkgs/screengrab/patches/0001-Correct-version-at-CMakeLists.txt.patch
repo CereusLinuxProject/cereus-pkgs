@@ -1,0 +1,25 @@
+From 9b4ef6b52fbaf739e1e6d3445b46a1db140bb003 Mon Sep 17 00:00:00 2001
+From: Kevin Figueroa <kfdevart@disroot.org>
+Date: Thu, 6 Aug 2026 21:04:40 -0400
+Subject: [PATCH] Correct version at CMakeLists.txt
+
+---
+ CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 5133acf..a9b9a62 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -52,7 +52,7 @@ set(CMAKE_AUTOMOC ON)
+ set(CMAKE_AUTOUIC ON)
+ set(CMAKE_INCLUDE_CURRENT_DIR ON)
+ 
+-set(SCREENGRAB_VERSION "3.1.0")
++set(SCREENGRAB_VERSION "3.2.0")
+ 
+ if (DEV_VERSION)
+     set(VERSION "${SCREENGRAB_VERSION}-dev (${DEV_VERSION})")
+-- 
+2.55.0
+

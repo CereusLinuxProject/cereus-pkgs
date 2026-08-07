@@ -1,9 +1,9 @@
 # Template file for 'screengrab'
 pkgname=screengrab
-version=3.1.0
+version=3.2.0
 revision=2
 build_style=cmake
-hostmakedepends="qt6-base-devel lxqt-build-tools perl"
+hostmakedepends="qt6-base qt6-tools lxqt-build-tools perl"
 makedepends="kf6-kwindowsystem-devel qt6-wayland-devel
  layer-shell-qt-devel libqtxdg-devel qt6-tools-devel
  qt6-wayland-private-devel qt6-base-private-devel"
@@ -13,5 +13,5 @@ license="GPL-2.0-only"
 homepage="https://github.com/lxqt/screengrab"
 changelog="https://raw.githubusercontent.com/lxqt/screengrab/refs/heads/master/CHANGELOG"
 distfiles="${homepage}/releases/download/${version}/${pkgname}-${version}.tar.xz"
-checksum=f83281ed4a5b5b315afc8bccc28b577246397e03f194acab6c698ed51fa2d3bc
+checksum=f43f27b261c3b22f05c79cb0131460bb144faf2720b590fc906c89cbcd3678bf
 repository=cereus-extra

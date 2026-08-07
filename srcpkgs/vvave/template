@@ -3,11 +3,11 @@ pkgname=vvave
 version=4.0.2
 revision=1
 build_style=cmake
-hostmakedepends="extra-cmake-modules qt6-base-devel gettext"
+hostmakedepends="extra-cmake-modules gettext qt6-base qt6-tools
+ qt6-base-private-devel qt6-declarative-devel qt6-declarative-private-devel"
 makedepends="kf6-kcoreaddons-devel kf6-ki18n-devel mauikit-devel
- mauikit-filebrowsing-devel mauikit-accounts-devel qt6-multimedia-devel
- taglib-devel qt6-base-private-devel qt6-declarative-devel
- qt6-declarative-private-devel"
+ mauikit-filebrowsing-devel mauikit-accounts-devel taglib-devel
+ qt6-multimedia-devel"
 short_desc="Multi-platform media player"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="LGPL-3.0-only"

@@ -1,9 +1,9 @@
 # Template file for 'lxqt-wayland-session'
 pkgname=lxqt-wayland-session
-version=0.3.1
+version=0.4.1
 revision=1
 build_style=cmake
-hostmakedepends="pkg-config lxqt-build-tools qt6-tools perl"
+hostmakedepends="pkg-config lxqt-build-tools qt6-tools qt6-base perl"
 makedepends="liblxqt-devel xdg-user-dirs"
 depends="lxqt-session qtxdg-tools layer-shell-qt"
 short_desc="Files needed for the LXQt Wayland Session"
@@ -12,7 +12,7 @@ license="LGPL-2.1-only AND MIT AND GPL-3.0-or-later AND GPL-3.0-only AND GPL-2.0
 homepage="https://github.com/lxqt/lxqt-wayland-session"
 changelog="https://raw.githubusercontent.com/lxqt/lxqt-wayland-session/refs/heads/master/CHANGELOG"
 distfiles="${homepage}/archive/refs/tags/${version}.tar.gz"
-checksum=@c6c3fffeb659d05f849dd29396582cb953a2fd710412756ce40619846e31c93a
+checksum=8a5634528d74d6944725d60f3d35f237a926d7adf9192820a214259ed4ed20e8
 repository=cereus-extra
 
 post_install() {

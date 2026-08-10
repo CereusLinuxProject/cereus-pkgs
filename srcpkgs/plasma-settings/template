@@ -1,0 +1,23 @@
+# Template file for 'plasma-settings'
+# shellcheck disable=all
+pkgname=plasma-settings
+version=26.02.0
+revision=1
+build_style=cmake
+configure_args="-DCMAKE_BUILD_TYPE=RelWithDebInfo -Wno-dev"
+hostmakedepends="extra-cmake-modules samurai qt6-base gettext kf6-kconfig-devel
+ kf6-kpackage-devel kf6-kcmutils-devel"
+makedepends="kf6-kauth-devel kf6-kcmutils-devel kf6-kconfig-devel
+ kf6-kcoreaddons-devel kf6-kdbusaddons-devel kf6-kdeclarative-devel
+ kf6-ki18n-devel kf6-kio-devel kirigami-addons-devel kf6-kitemmodels-devel
+ kf6-kwindowsystem-devel kf6-networkmanager-qt-devel kf6-modemmanager-qt-devel
+ qt6-base-devel qt6-declarative-devel qt6-declarative-private-devel
+ kf6-solid-devel kf6-kirigami kirigami-addons kf6-kcrash-devel"
+depends="kf6-kded"
+short_desc="Settings application for Plasma Mobile"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
+license="GPL-2.0-or-later AND LGPL-2.1-or-later"
+homepage="https://community.kde.org/Plasma/Mobile"
+distfiles="${KDE_SITE}/${pkgname}/${pkgname}-${version}.tar.xz"
+checksum=fa7389a121bde75344caf6eba18964eaab4e21a556be6cb390588e5f986140de
+repository=cereus-extra

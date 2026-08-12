@@ -1,13 +1,13 @@
 # Template file for 'touche'
 pkgname=touche
 version=2.0.15
-revision=1
+revision=2
 build_style=meson
 build_helper="gir"
 hostmakedepends="cmake pkg-config gettext-devel desktop-file-utils gjs nodejs
  glib-devel"
 makedepends="appstream-glib-devel libadwaita-devel"
-depends="touchegg gjs"
+depends="touchegg gjs libtouche"
 short_desc="Desktop application to configure Touchégg"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-3.0-or-later"

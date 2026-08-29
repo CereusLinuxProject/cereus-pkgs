@@ -1,8 +1,10 @@
 # Template file for 'freetube-bin'
 pkgname=freetube-bin
-version=0.25.1
+version=0.25.3
 revision=1
-archs="x86_64"
+# There is a binary for armv7l, but we don't have where to test it.
+# If we get it or someone willing to test it, we'll add it here.
+archs="x86_64 aarch64"
 build_style=fetch
 depends="liberation-fonts-ttf"
 short_desc="Open Source YouTube app for privacy (precompiled binaries)"
@@ -10,16 +12,23 @@ maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="AGPL-3.0-or-later"
 homepage="https://freetubeapp.io"
 changelog="https://github.com/FreeTubeApp/FreeTube/releases/tag/v${version}-beta"
-#https://github.com/FreeTubeApp/FreeTube/releases/download/v${version}-beta/${pkgname%-bin}_0.23.6_beta_amd64.deb
-distfiles="https://github.com/FreeTubeApp/Freetube/releases/download/v${version}-beta/${pkgname%-bin}_${version}_beta_amd64.deb
+
+case "${XBPS_TARGET_MACHINE}" in
+	x86_64)	_arch="amd64"
+		checksum="3a75dc4ef65edf184222c3389855be4699d04cce321e9695bb2989a50db2ba5d";;
+	aarch64) _arch="arm64"
+		checksum="59a39a54055f414c2ea9666c373c3a4970266d8d366d52a839278d20f5ee8bc8";;
+esac
+
+# Append the checksum of the license file
+checksum="${checksum} 354c7ed944fe4aab686cf31f178512b956b1fcab78a1d1340cb7025c04f857c3"
+distfiles="https://github.com/FreeTubeApp/Freetube/releases/download/v${version}-beta/${pkgname%-bin}_${version}_beta_${_arch}.deb
  https://github.com/FreeTubeApp/FreeTube/blob/v${version}-beta/LICENSE"
-checksum="e30a9e4f0bb0887d0691f5479e04963f8d9aec8d232f9d1cef6577b8af1a50ab
- dd3c63b3dec240a0a9b4bef7994edd460c258c5d345b53cdd7f7e1a8841f2040"
 nopie=yes
 repository=cereus-extra
 
 do_install() {
-	vextract -C "${DESTDIR}" "${pkgname%-bin}_${version}_beta_amd64.deb"
+	vextract -C "${DESTDIR}/" "${pkgname%-bin}_${version}_beta_${_arch}.deb"
 	vbin ${FILESDIR}/freetube.sh freetube
 	vlicense LICENSE
 }

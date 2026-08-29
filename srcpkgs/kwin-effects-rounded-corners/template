@@ -1,6 +1,6 @@
 # Template file for 'kwin-effects-rounded-corners'
 pkgname=kwin-effects-rounded-corners
-version=0.9.0
+version=0.10.0
 revision=1
 build_style=cmake
 configure_args="-DKWIN_X11=OFF"
@@ -14,7 +14,7 @@ license="GPL-3.0-or-later"
 homepage="https://github.com/matinlotfali/KDE-Rounded-Corners"
 changelog="${homepage}/releases/tag/v${version}"
 distfiles="${homepage}/archive/refs/tags/v${version}.tar.gz"
-checksum=4acaf2dad31a22cbfa009bdce836b969177996527237eb8c62c8393e03622c5f
+checksum=f3f03d96e17ae4b7dcee6347a01c75de6f90ed19e070e98ae8bf2dd71ae276db
 repository=cereus-extra
 make_check=no # tests aren't made to run inside chroot
 

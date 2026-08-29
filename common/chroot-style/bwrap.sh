@@ -26,6 +26,6 @@ if [ -z "$XBPS_TEMP_MASTERDIR" ]; then
 else
 	exec bwrap --overlay-src "$MASTERDIR" --tmp-overlay / \
 		--ro-bind "$DISTDIR" /cereus-pkgs \
-		--dev /dev --tmpfs /tmp --proc /proc \
+		--dev /dev --tmpfs /tmp --proc /proc --ro-bind /sys /sys \
 		${HOSTDIR:+--bind "$HOSTDIR" /host} ${EXTRA_ARGS} "$@"
 fi

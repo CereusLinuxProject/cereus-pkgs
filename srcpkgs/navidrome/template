@@ -1,0 +1,42 @@
+# Template file for 'navidrome'
+pkgname=navidrome
+version=0.63.2
+revision=1
+build_style=go
+go_import_path="github.com/navidrome/navidrome"
+go_build_tags="netgo,sqlite_fts5,libsqlite3"
+# Display revision instead of keeping the git sha in sync with version (inspired by Alpine)
+go_ldflags="-X github.com/navidrome/navidrome/consts.gitTag=v${version}
+	-X github.com/navidrome/navidrome/consts.gitSha=r${revision}"
+conf_files="/etc/navidrome/navidrome.toml"
+hostmakedepends="nodejs"
+makedepends="sqlite-devel"
+depends="ffmpeg"
+checkdepends="zip"
+short_desc="Music server and streamer compatible with Subsonic/Airsonic"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
+license="GPL-3.0-or-later"
+homepage="https://www.navidrome.org/"
+distfiles="https://github.com/navidrome/navidrome/archive/refs/tags/v${version}.tar.gz"
+checksum=a2602f00b429325f37efedba5e67918269f5ad2687266629dad23b740135cd4c
+system_accounts="_navidrome"
+_navidrome_homedir="/var/lib/navidrome"
+make_dirs="/var/lib/navidrome 755 _navidrome _navidrome
+ /var/lib/navidrome/music 0755 _navidrome _navidrome
+ /etc/navidrome 0755 root root"
+repository=cereus-extra
+
+pre_build() {
+	cd ui
+	npm install
+	npm run build
+}
+
+post_install() {
+	vsv navidrome
+	vinstall ${FILESDIR}/navidrome.toml 0644 /etc/navidrome
+	for _shell in bash zsh fish; do
+		# Generated via navidrome completion command
+		vcompletion ${FILESDIR}/completion.${_shell} ${_shell}
+	done
+}

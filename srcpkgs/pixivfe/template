@@ -1,0 +1,27 @@
+# Template file for 'pixivfe'
+pkgname=pixivfe
+version=3.0.4
+revision=1
+build_style=go
+go_import_path="codeberg.org/pixivfe/pixivfe/v3"
+conf_files="/etc/pixivfe/config.yaml"
+short_desc="Open source alternative frontend for Pixiv"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
+license="AGPL-3.0-only"
+homepage="https://pixivfe-docs.pages.dev"
+distfiles="https://codeberg.org/PixivFE/PixivFE/archive/v${version}.tar.gz"
+checksum=71b77970f7553e9616a90a13ace4fbc90342f0b6c4da5f2ea5c37712c6807f9b
+
+system_accounts="_pixivfe"
+_pixivfe_homedir="/var/lib/pixivfe"
+_pixivfe_descr="PixivFE daemon"
+
+make_check=no # fails, apparently by rate limit
+repository=cereus-extra
+
+post_install() {
+	vinstall deploy/config.yaml.example 0644 /etc/pixivfe config.yaml
+	vsconf deploy/config.yaml.example config.yaml
+	vsv ${pkgname}
+	vlicense LICENSE
+}

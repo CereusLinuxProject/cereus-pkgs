@@ -1,0 +1,5 @@
+#!/bin/sh
+exec 2>&1
+[ -r conf ] && . ./conf
+export PIXIVFE_CONFIGFILE="${PIXIVFE_CONFIGFILE:-/etc/pixivfe/config.yaml}"
+exec chpst -u _pixivfe:_pixivfe pixivfe

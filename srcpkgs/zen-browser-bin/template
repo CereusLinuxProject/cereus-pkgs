@@ -1,15 +1,22 @@
 # Template file for 'zen-browser-bin'
 pkgname=zen-browser-bin
-version=1.21.11b
+version=1.21.16b
 revision=1
-archs="x86_64"
+archs="x86_64 aarch64"
 build_style=fetch
 short_desc="Performance oriented Firefox-based web browser (precompiled version)"
-maintainer="kevin <kevin@disroot.org>"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="MPL-2.0"
 homepage="https://github.com/zen-browser/desktop"
-distfiles="https://github.com/zen-browser/desktop/releases/download/${version}/zen.linux-x86_64.tar.xz>zen.linux-${version}-x86_64.tar.xz"
-checksum=4fd27eef0049bb6282f1d8af0faaef2f4106a2bf30e9fad80026b1820c12d4f4
+distfiles="https://github.com/zen-browser/desktop/releases/download/${version}/zen.linux-${XBPS_TARGET_MACHINE}.tar.xz>zen.linux-${version}-${XBPS_TARGET_MACHINE}.tar.xz"
+
+case "${XBPS_TARGET_MACHINE}" in
+	x86_64)
+		checksum="1e4c3c391d10a82239d35afad84658fa3b3856b8ff72f93bbff7f57392acb942";;
+	aarch64)
+		checksum="7aa0c251c1dad6cbea374b3d5892d4c1948465479232c318aef89aa1cf183654";;
+esac
+
 repository=cereus-extra
 
 do_install() {
@@ -17,7 +24,7 @@ do_install() {
 	install -dm755 "${DESTDIR}/opt/zen-browser-bin" "${DESTDIR}/opt/zen-browser/distribution" "${DESTDIR}/usr/bin" "${DESTDIR}/usr/share/applications" "${DESTDIR}/usr/share/pixmaps"
 
 	# extracting binary package
-	vextract --strip-components=1 -C ${DESTDIR}/opt/${pkgname} zen.linux-${version}-x86_64.tar.xz
+	vextract --strip-components=1 -C ${DESTDIR}/opt/${pkgname} zen.linux-${version}-${XBPS_TARGET_MACHINE}.tar.xz
 
 	# symbolic link
 	ln -sf /opt/zen-browser-bin/zen ${DESTDIR}/usr/bin/zen
